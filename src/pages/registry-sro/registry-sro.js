@@ -62,12 +62,11 @@ export const RegistryRSO = ({ listType }) => {
                 dispatch(getEntries('/standard-certifications/list'));
                 break;
         }
-        //    dispatch(getEntries(body));
-        //    dispatch(getRegistry(pathname));
+
     }, [pathname, dispatch]);
 
     const dataSource = entries.map((item) => ({ ...item, key: item.id }));
-    //     console.log(dataSource, 'dataSoure');
+
 
     const relocateToCard = (record) => {
         return {
@@ -186,15 +185,3 @@ export const RegistryRSO = ({ listType }) => {
     );
 };
 
-//    switch (listType) {
-//        case 'registry2':
-//            dispatch(
-//                getRegistry('http://jsonplaceholder.typicode.com/posts')
-//            );
-//            break;
-//        case 'registry3':
-//            dispatch(
-//                getRegistry('http://jsonplaceholder.typicode.com/comments')
-//            );
-//            break;
-//        default:
