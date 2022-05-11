@@ -66,6 +66,7 @@ export const RegistryOs = () => {
                     total: entries.length,
                 }}
                 onRow={(record) => relocateToCard(record)}
+                rowKey={(obj) => obj.id}
             />
         </div>
     );

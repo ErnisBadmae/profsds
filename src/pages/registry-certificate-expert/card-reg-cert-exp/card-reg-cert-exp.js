@@ -84,7 +84,7 @@ function CardRegCertExp(props) {
                 <br />
                 <p>{currentItem?.status || 'нет данных'}</p> */}
             </div>
-            <div className="btn__card">
+            {/* <div className="btn__card">
                 <ButtonRegistry
                     text="Список членов СДС"
                     path={'/certificates/list'}
@@ -97,7 +97,7 @@ function CardRegCertExp(props) {
                     text="Выгрузить реестр членов СДС"
                     path={'/certificates/list'}
                 />
-            </div>
+            </div> */}
         </div>
     );
 }

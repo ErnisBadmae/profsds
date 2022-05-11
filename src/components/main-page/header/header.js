@@ -1,13 +1,10 @@
 import { ButtonRegistry } from '../../buttons/button-registry/button-registry';
 import logo from '../../../assets/img/logo/logo.png';
-import { Layout } from 'antd';
 import './header.scss';
 
 export const Header = () => {
-    const { Content } = Layout;
-
     return (
-        <Content style={{ padding: '0 20px' }}>
+        <div style={{ padding: '0 20px' }}>
             <header className="header">
                 <div className="header__logo pointer">
                     <a href="/standard-certifications/list">
@@ -37,6 +34,6 @@ export const Header = () => {
                 </div>
             </header>
             <div className="header__line"></div>
-        </Content>
+        </div>
     );
 };

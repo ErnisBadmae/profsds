@@ -18,7 +18,6 @@ export const RegistrySds = () => {
 
     const columns = [
         {
-            key: '1',
             title: '',
             dataIndex: 'id_sds',
             data_type: 'string',
@@ -26,7 +25,6 @@ export const RegistrySds = () => {
             number_in_row: 2,
         },
         {
-            key: '2',
             title: 'Статус ',
             dataIndex: 'status',
             data_type: 'string',
@@ -34,7 +32,6 @@ export const RegistrySds = () => {
             number_in_row: 1,
         },
         {
-            key: '3',
             title: 'Наименование СДС',
             dataIndex: 'full_name',
             data_type: 'string',
@@ -42,7 +39,6 @@ export const RegistrySds = () => {
             number_in_row: 1,
         },
         {
-            key: '4',
             title: 'Регистрационный номер СДС',
             dataIndex: 'reg_no',
             data_type: 'string',
@@ -50,7 +46,6 @@ export const RegistrySds = () => {
             number_in_row: 1,
         },
         {
-            key: '5',
             title: 'Держатель',
             dataIndex: 'reg_comp',
             data_type: 'string',
@@ -58,7 +53,6 @@ export const RegistrySds = () => {
             number_in_row: 1,
         },
         {
-            key: '6',
             title: 'Дата регистрации',
             dataIndex: 'reg_date',
             data_type: 'string',

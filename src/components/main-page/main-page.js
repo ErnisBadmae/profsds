@@ -1,13 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from './header/header';
-
 import React from 'react';
-
 import './main-page.scss';
 
 export const MainPage = () => {
-    //
-
     return (
         <>
             <Header />

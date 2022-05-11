@@ -2,6 +2,7 @@
     "name": "my-app",
     "proxy": "http://api-prof-sdc.anonamis.ru/api/register/",
     "version": "0.1.0",
+    "homepage": "http://public-prof.sdc.anonamis.ru",
     "private": true,
     "dependencies": {
         "@ant-design/icons": "^4.7.0",

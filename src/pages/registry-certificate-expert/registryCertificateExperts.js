@@ -80,6 +80,7 @@ export const RegistryCertificationExperts = () => {
                     total: entries.length,
                 }}
                 onRow={(record) => relocateToCard(record)}
+                rowKey={(obj) => obj.id}
             />
         </div>
     );
