@@ -1,7 +1,7 @@
 import { ButtonRegistry } from '../../buttons/button-registry/button-registry';
-
-import './header.scss';
+import logo from '../../../assets/img/logo/logo.png';
 import { Layout } from 'antd';
+import './header.scss';
 
 export const Header = () => {
     const { Content } = Layout;
@@ -11,7 +11,7 @@ export const Header = () => {
             <header className="header">
                 <div className="header__logo pointer">
                     <a href="/standard-certifications/list">
-                        <img className="logo" src='img/logo.png' alt="logo" />
+                    <img className="logo" src={logo} alt="logo" />
                     </a>
                 </div>
                 <div className="header__title">
