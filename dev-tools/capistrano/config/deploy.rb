@@ -24,7 +24,7 @@ set :sensio_distribution_version, 5
 # symfony-standard edition directories
 set :bin_path, "bin"
 set :config_path, "config"
-set :var_path, "var"
+#set :var_path, "var"
 set :web_path, "public"
 
 # The next settings are lazily evaluated from the above values, so take care
@@ -59,14 +59,14 @@ after 'deploy:published', 'dependencies:npm_encore'
 set :permission_method, :acl
 set :file_permissions_users, ["www-data"]
 set :file_permissions_groups, ["www"]
-set :file_permissions_paths, ["var"]
+#set :file_permissions_paths, ["var"]
 
 
 namespace :deploy do
     task :permissions do
         on roles(:all) do
             if test("[ -d #{release_path} ]")
-                execute "cd '#{release_path}'; sudo chown www-data:www var -R ;"
+                execute "cd '#{release_path}';"
                 puts "set permissions for #{release_path}"
             end
         end
