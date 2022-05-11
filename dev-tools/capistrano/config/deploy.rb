@@ -1,6 +1,7 @@
 # config valid only for current version of Capistrano
 lock ">=3.6"
 
+#!!!
 set :application, "front_open_profsdc"
 set :repo_url, "git@git.nms:prof_sdc/front_open_profsdc.git"
 
