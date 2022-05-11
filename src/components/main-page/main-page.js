@@ -1,21 +1,21 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from './header/header';
+
+import React from 'react';
+
 import './main-page.scss';
-import { Layout } from 'antd';
 
 export const MainPage = () => {
-  const { Content } = Layout;
-  return (
-    <>
-      <Header />
-      <main>
-        <Content style={{ padding: '0 20px' }}>
-          {/* <div className='breadcrumbs'>
+    //
 
+    return (
+        <>
+            <Header />
+            {/* <Content style={{ padding: '0 20px' }}>
+                {/* <div className='breadcrumbs'>
           </div> */}
-          </Content>
-        <Outlet />
-      </main>
-    </>
-  );
+            <Outlet />
+            {/* </Content> */}
+        </>
+    );
 };

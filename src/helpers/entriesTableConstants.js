@@ -78,7 +78,7 @@ export const expertsListTableColumn = [
 
     {
         title: 'Фамилия, имя, отчество эксперта',
-        dataIndex: 'expert_name',
+        dataIndex: 'expert_name_link',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,

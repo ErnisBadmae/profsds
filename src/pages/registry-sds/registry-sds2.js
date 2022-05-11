@@ -1,10 +1,10 @@
 import { Table, Layout, Select, Input, Form, Drawer, Button } from 'antd';
 import { FilterFilled } from '@ant-design/icons';
 import React, { useEffect, useState } from 'react';
-import { getEntries, getView } from '../../store/entries/actions';
+import { getEntries } from '../../store/entries/actions';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import {
     entriesTableColumns,
     organCertificationTableColumn,
@@ -12,7 +12,7 @@ import {
     certifacatesTableColumn,
 } from '../../helpers/entriesTableConstants';
 import { Poisk } from '../../components/poisk/poisk';
-import './registry-sro.scss';
+import './registry-sds.scss';
 
 const { Content } = Layout;
 const { Option } = Select;
@@ -32,7 +32,8 @@ const statusOptions = [
     },
 ];
 
-export const RegistryRSO = ({ listType }) => {
+export const RegistryTest = () => {
+    const [data, setData] = useState([]);
     let [filterModalVisible, setFilterModalVisible] = useState(false);
 
     const { entries } = useSelector((state) => state.entries);
@@ -43,12 +44,36 @@ export const RegistryRSO = ({ listType }) => {
 
     const { pathname } = useLocation();
 
-    const body = {};
+    useEffect(() => {
+        if (entries.length > 0)
+            switch (pathname) {
+                case '/organ-certifications/list':
+                    break;
+                case '/organ-certification-experts/list':
+                    const dataSource = entries.map((item) => ({
+                        ...item,
+                        key: item.id,
+                        expert_name_link: (
+                            <Link
+                                to={`/organ-certification-expert/view/${item.id}`}
+                            >
+                                {item.expert_name}{' '}
+                            </Link>
+                        ),
+                    }));
+                    setData(dataSource);
+                    break;
+                case '/certificates/list':
+                    break;
+
+                default:
+                    break;
+            }
+    }, [entries, dispatch]);
 
     useEffect(() => {
-        console.log(pathname, 'pathname');
         switch (pathname) {
-            case '/organ_certifications/list':
+            case '/organ-certifications/list':
                 dispatch(getEntries(pathname));
                 break;
             case '/organ-certification-experts/list':
@@ -62,17 +87,41 @@ export const RegistryRSO = ({ listType }) => {
                 dispatch(getEntries('/standard-certifications/list'));
                 break;
         }
+<<<<<<< HEAD:src/pages/registry-sro/registry-sro.js
 
     }, [pathname, dispatch]);
 
     const dataSource = entries.map((item) => ({ ...item, key: item.id }));
 
+=======
+    }, [pathname, dispatch]);
+
+    //     console.log(dataSource, 'dataSoure');
+>>>>>>> 0ba165db48191a179a6c8e6bdb4f273e5c9c7d1a:src/pages/registry-sds/registry-sds2.js
 
     const relocateToCard = (record) => {
         return {
             onClick: (e) => {
                 e.preventDefault();
-                navigate('/view/' + record.id);
+                switch (pathname) {
+                    case '/organ-certifications/list':
+                        navigate('/organ-certification/view/' + record.id);
+                        break;
+
+                    case '/organ-certification-experts/list':
+                        navigate(
+                            '/organ-certification-expert/view/' + record.id
+                        );
+                        break;
+
+                    case '/certificates/list':
+                        navigate('/certificate/view/' + record.id);
+                        break;
+
+                    default:
+                        navigate('/standard-certification/view/' + record.id);
+                        break;
+                }
             },
         };
     };
@@ -167,7 +216,7 @@ export const RegistryRSO = ({ listType }) => {
 
                     <Table
                         columns={handleColumns()}
-                        dataSource={dataSource}
+                        dataSource={data}
                         className="registry-sro__table"
                         size="medium"
                         filterSearch={true}
@@ -175,7 +224,7 @@ export const RegistryRSO = ({ listType }) => {
                             // pageSize: '5',
                             showSizeChanger: true,
                             // itemRender: itemRender
-                            total: dataSource.length,
+                            total: data.length,
                         }}
                         onRow={(record) => relocateToCard(record)}
                     />
@@ -184,4 +233,7 @@ export const RegistryRSO = ({ listType }) => {
         </div>
     );
 };
+<<<<<<< HEAD:src/pages/registry-sro/registry-sro.js
 
+=======
+>>>>>>> 0ba165db48191a179a6c8e6bdb4f273e5c9c7d1a:src/pages/registry-sds/registry-sds2.js

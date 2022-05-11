@@ -6,7 +6,7 @@ export const getView = createAsyncThunk(
     async (payload, dispatch) => {
         //    console.log('dispatch', dispatch);
         let result = await axios.get(
-            `http://api-prof-sdc.anonamis.ru/api/register/standard-certification/view/${payload}`
+            `http://api-prof-sdc.anonamis.ru/api/register${payload}`
         );
 
         console.log('result', result);

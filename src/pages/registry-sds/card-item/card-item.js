@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// import itemData from '../../helpers/itemData';
 import { ButtonRegistry } from '../../../components/buttons/button-registry/button-registry';
 import { getView } from '../../../store/entries/actions';
+// import { certifacatesTableColumn } from '../../../helpers/currentTableConstants';
 import './card-item.css';
 
 function CardItem(props) {
-    const { id } = useParams();
+    const { pathname } = useLocation();
+
+    console.log(pathname, 'pathnamefromcardcurrent');
+    //     const { id } = useParams();
     const dispatch = useDispatch();
 
     const { currentCard } = useSelector((state) => state.entries);
@@ -21,9 +24,23 @@ function CardItem(props) {
     //     const currentItem = currentCard ?? Object.assign({}, currentCard);
     //     const currentItem = entries.find((el) => el.id_sds === id);
     useEffect(() => {
-        dispatch(getView(id));
-    }, [dispatch, id]);
+        dispatch(getView(pathname));
+    }, [pathname, dispatch]);
 
+    //     const handleColumns2 = function () {
+    //    switch (pathname) {
+    //   case '/organ_certifications/list':
+    //       return organCertificationTableColumn;
+
+    //   case '/organ-certification-experts/list':
+    //       return expertsListTableColumn;
+
+    //   case '/certificate/view/:id':
+    //       return (
+
+    //       );
+    //   default:
+    console.log(12312312312);
     return (
         <div className="card">
             <div className="card__title">
@@ -32,13 +49,13 @@ function CardItem(props) {
             <div className="card__body">
                 <strong>Полное наименование СДС</strong>
                 <br />
-                <p>{currentItem?.reg_no}</p>
+                <p>{currentItem?.expert_name}</p>
                 <strong>
                     <br />
                     Регистрационный номер СДС
                 </strong>
                 <br />
-                <p>{currentItem?.area}</p>
+                <p>{currentItem?.manager_name}</p>
                 <strong>
                     <br />
                     Дата регистрации (оно же Дата регистрации в реестре
@@ -91,6 +108,10 @@ function CardItem(props) {
             </div>
         </div>
     );
+
+    //     };
+
+    //     return { handleColumns2 };
 }
 
 export default CardItem;
