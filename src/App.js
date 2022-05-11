@@ -1,7 +1,13 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { MainPage } from './components/main-page/main-page';
-import { RegistryRSO } from './pages/registry-sro/registry-sro';
-
+import { RegistrySds } from './pages/registry-sds/registry-sds';
+import { RegistryCertificationExperts } from './pages/registry-certificate-expert/registryCertificateExperts';
+import { TableWrapper } from './components/tableWrapper/tableWrapper';
+import { RegistryOs } from './pages/registry-os/registry-os';
+import { RegistryCertificates } from './pages/registry-certificates/registry-certificates';
+import CardRegCertExp from './pages/registry-certificate-expert/card-reg-cert-exp/card-reg-cert-exp';
+import CardSertificate from './pages/registry-certificates/card-certificates/card-certificates';
+import CardOs from './pages/registry-os/card-os/card-os';
 
 function App() {
     return (
