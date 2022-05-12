@@ -21,12 +21,19 @@ export const RegistryCertificates = () => {
     }, [pathname, dispatch]);
 
     const columns = [
+        //    {
+        //        title: '',
+        //        dataIndex: 'id',
+        //        data_type: 'string',
+        //        is_sort: true,
+        //        number_in_row: 2,
+        //    },
         {
-            title: '',
-            dataIndex: 'id',
+            title: 'Наименование организации',
+            dataIndex: 'company_name',
             data_type: 'string',
             is_sort: true,
-            number_in_row: 2,
+            number_in_row: 1,
         },
         {
             title: '№ сертификата',
@@ -35,24 +42,10 @@ export const RegistryCertificates = () => {
             is_sort: true,
             number_in_row: 1,
         },
-        {
-            title: 'Наименование организации',
-            dataIndex: 'company_name',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
 
         {
             title: 'Срок действия сертификата',
             dataIndex: 'certificate_date',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
-        {
-            title: 'Валидация',
-            dataIndex: 'valid_date',
             data_type: 'string',
             is_sort: true,
             number_in_row: 1,

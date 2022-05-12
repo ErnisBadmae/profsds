@@ -48,12 +48,18 @@ function CardSertificate(props) {
                 </strong>
                 <p>{currentItem?.certificate_form}</p>
 
-                <strong>
+                {/* <strong>
                     <br />
                     Дата выдачи
                 </strong>
                 <br />
-                <p>{currentItem?.certificate_date}</p>
+                <p>{currentItem?.certificate_date}</p> */}
+                <strong>
+                    <br />
+                    Срок действия
+                </strong>
+                <br />
+                <p>{currentItem?.valid_date}</p>
 
                 <strong>
                     <br />
@@ -69,6 +75,20 @@ function CardSertificate(props) {
                 <br />
                 <p>{currentItem?.company_ogrn}</p>
 
+                <strong>
+                    <br />
+                    Примечание
+                </strong>
+                <br />
+                <p>{currentItem?.comment}</p>
+
+                <strong>
+                    <br />
+                    Сертификат(скан)
+                </strong>
+                <br />
+                <p>{currentItem?.certificate_scan}</p>
+
                 {/* <strong>
                     <br />
                     Статус
@@ -76,7 +96,7 @@ function CardSertificate(props) {
                 <br />
                 <p>{currentItem?.status || 'нет данных'}</p> */}
             </div>
-            <div className="btn__card">
+            {/* <div className="btn__card">
                 <ButtonRegistry
                     text="Список членов СДС"
                     path={'/certificates/list'}
@@ -89,7 +109,7 @@ function CardSertificate(props) {
                     text="Выгрузить реестр членов СДС"
                     path={'/certificates/list'}
                 />
-            </div>
+            </div> */}
         </div>
     );
 }

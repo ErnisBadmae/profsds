@@ -6,7 +6,7 @@ import { getView } from '../../../store/entries/actions';
 
 import './card-item.css';
 
-function CardRegCertExp(props) {
+function CardExpert(props) {
     const { pathname } = useLocation();
 
     //     console.log(pathname, 'pathnamefromcardcurrent');
@@ -44,10 +44,9 @@ function CardRegCertExp(props) {
 
                 <strong>
                     <br />
-                    Организация, представившая СДС на регистрацию (Оно же
-                    Держатель)
+                    Сертификат (скан)
                 </strong>
-                <p>{currentItem?.registration_company}</p>
+                <p>{currentItem?.certificate_scan}</p>
 
                 <strong>
                     <br />
@@ -56,19 +55,19 @@ function CardRegCertExp(props) {
                 <br />
                 <p>{currentItem?.valid}</p>
 
-                <strong>
+                {/* <strong>
                     <br />
                     Дата вступление в организацию
                 </strong>
                 <br />
-                <p>{currentItem?.introduction_date}</p>
+                <p>{currentItem?.introduction_date}</p> */}
 
-                <strong>
+                {/* <strong>
                     <br />
                     Дата исключение из организации
                 </strong>
                 <br />
-                <p>{currentItem?.exclusion_date}</p>
+                <p>{currentItem?.exclusion_date}</p> */}
 
                 <strong>
                     <br />
@@ -102,4 +101,4 @@ function CardRegCertExp(props) {
     );
 }
 
-export default CardRegCertExp;
+export default CardExpert;

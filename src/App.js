@@ -5,9 +5,10 @@ import { RegistryCertificationExperts } from './pages/registry-certificate-exper
 import { TableWrapper } from './components/tableWrapper/tableWrapper';
 import { RegistryOs } from './pages/registry-os/registry-os';
 import { RegistryCertificates } from './pages/registry-certificates/registry-certificates';
-import CardRegCertExp from './pages/registry-certificate-expert/card-reg-cert-exp/card-reg-cert-exp';
 import CardSertificate from './pages/registry-certificates/card-certificates/card-certificates';
 import CardOs from './pages/registry-os/card-os/card-os';
+import CardSds from './pages/registry-certificate-expert/card-reg-cert-exp/card-reg-cert-exp';
+import CardExpert from './pages/registry-certificate-expert/card-reg-cert-exp/card-reg-cert-exp';
 
 function App() {
     return (
@@ -25,7 +26,7 @@ function App() {
                     />
                     <Route
                         path="/organ-certification-expert/view/:id"
-                        element={<CardRegCertExp />}
+                        element={<CardExpert />}
                     />
                     <Route
                         path="/certificate/view/:id"
@@ -33,7 +34,7 @@ function App() {
                     />
                     <Route
                         path="/standard-certification/view/:id"
-                        element={<CardRegCertExp />}
+                        element={<CardSds />}
                     />
                     <Route
                         path="/organ-certification/view/:id"

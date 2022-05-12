@@ -41,9 +41,9 @@ function CardOs(props) {
                 <p>{currentItem?.certificate_number}</p>
                 <br />
 
-                <strong>Дата решения об аккредитации</strong>
+                {/* <strong>Дата решения об аккредитации</strong>
                 <br />
-                <p>{currentItem?.certificate_date}</p>
+                <p>{currentItem?.certificate_date}</p> */}
 
                 <strong>
                     <br />
@@ -71,6 +71,34 @@ function CardOs(props) {
                 </strong>
                 <br />
                 <p>{currentItem?.manager_name}</p>
+
+                <strong>
+                    <br />
+                    Адрес
+                </strong>
+                <br />
+                <p>{currentItem?.address}</p>
+
+                <strong>
+                    <br />
+                    Электронная почта
+                </strong>
+                <br />
+                <p>{currentItem?.email}</p>
+
+                <strong>
+                    <br />
+                    Сайт
+                </strong>
+                <br />
+                <p>{currentItem?.site}</p>
+
+                <strong>
+                    <br />
+                    Область распространения
+                </strong>
+                <br />
+                <p>{currentItem?.area}</p>
 
                 {/* <strong>
                     <br />

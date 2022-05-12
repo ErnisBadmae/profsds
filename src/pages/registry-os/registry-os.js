@@ -19,13 +19,13 @@ export const RegistryOs = () => {
     }, [pathname, dispatch]);
 
     const columns = [
-        {
-            title: '',
-            dataIndex: 'id_sds',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 2,
-        },
+        //    {
+        //        title: '',
+        //        dataIndex: 'id',
+        //        data_type: 'string',
+        //        is_sort: true,
+        //        number_in_row: 2,
+        //    },
         {
             title: 'Наименование',
             dataIndex: 'full_name_organ_certification',
@@ -36,6 +36,13 @@ export const RegistryOs = () => {
         {
             title: 'Сокращенное название',
             dataIndex: 'short_name_organ_certification',
+            data_type: 'string',
+            is_sort: true,
+            number_in_row: 1,
+        },
+        {
+            title: 'Номер сертификата',
+            dataIndex: 'certificate_number',
             data_type: 'string',
             is_sort: true,
             number_in_row: 1,

@@ -1,26 +1,24 @@
-// import { useNavigate, useLocation } from 'react-router-dom';
+export const relocateToCard = (record, pathname, callback) => {
+    return {
+        onClick: (e) => {
+            e.preventDefault();
+            switch (pathname) {
+                case '/organ-certifications/list':
+                    callback('/organ-certification/view/' + record.id);
+                    break;
 
-// export const relocateToCard = (record) => {
-//     return {
-//         onClick: (e) => {
-//             e.preventDefault();
-//             switch (pathname) {
-//                 case '/organ-certifications/list':
-//                     navigate('/organ-certification/view/' + record.id);
-//                     break;
+                case '/organ-certification-experts/list':
+                    callback('/organ-certification-expert/view/' + record.id);
+                    break;
 
-//                 case '/organ-certification-experts/list':
-//                     navigate('/organ-certification-expert/view/' + record.id);
-//                     break;
+                case '/certificates/list':
+                    callback('/certificate/view/' + record.id);
+                    break;
 
-//                 case '/certificates/list':
-//                     navigate('/certificate/view/' + record.id);
-//                     break;
-
-//                 default:
-//                     navigate('/standard-certification/view/' + record.id);
-//                     break;
-//             }
-//         },
-//     };
-// };
+                default:
+                    callback('/standard-certification/view/' + record.id);
+                    break;
+            }
+        },
+    };
+};

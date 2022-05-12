@@ -3,13 +3,13 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ButtonRegistry } from '../../../components/buttons/button-registry/button-registry';
 import { getView } from '../../../store/entries/actions';
-// import { certifacatesTableColumn } from '../../../helpers/currentTableConstants';
+
 import './card-item.css';
 
-function CardItem(props) {
+function CardRegCertExp(props) {
     const { pathname } = useLocation();
 
-    console.log(pathname, 'pathnamefromcardcurrent');
+    //     console.log(pathname, 'pathnamefromcardcurrent');
     //     const { id } = useParams();
     const dispatch = useDispatch();
 
@@ -27,91 +27,78 @@ function CardItem(props) {
         dispatch(getView(pathname));
     }, [pathname, dispatch]);
 
-    //     const handleColumns2 = function () {
-    //    switch (pathname) {
-    //   case '/organ_certifications/list':
-    //       return organCertificationTableColumn;
-
-    //   case '/organ-certification-experts/list':
-    //       return expertsListTableColumn;
-
-    //   case '/certificate/view/:id':
-    //       return (
-
-    //       );
-    //   default:
-    console.log(12312312312);
     return (
         <div className="card">
             <div className="card__title">
                 <strong>{currentItem?.full_name}</strong>
             </div>
+
             <div className="card__body">
-                <strong>Полное наименование СДС</strong>
+                <strong>Сокращенное название</strong>
                 <br />
-                <p>{currentItem?.expert_name}</p>
-                <strong>
+                <p>{currentItem?.short_name}</p>
+
+                <strong>Регистрационный номер</strong>
+                <br />
+                <p>{currentItem?.registration_number}</p>
+
+                {/* <strong>
                     <br />
-                    Регистрационный номер СДС
+                  
                 </strong>
-                <br />
-                <p>{currentItem?.manager_name}</p>
-                <strong>
-                    <br />
-                    Дата регистрации (оно же Дата регистрации в реестре
-                    Росстандарта)
-                </strong>
-                <br />
-                <p>{currentItem?.reg_date}</p>
+                <p>{currentItem?.registration_date}</p> */}
+
                 <strong>
                     <br />
                     Организация, представившая СДС на регистрацию (Оно же
                     Держатель)
                 </strong>
-                <br />
-                <p>{currentItem?.reg_comp}</p>
+                <p>{currentItem?.registration_company}</p>
+
                 <strong>
                     <br />
-                    Сайт:
+                    Сайт
                 </strong>
                 <br />
                 <p>{currentItem?.site}</p>
+
                 <strong>
                     <br />
-                    Область распространения системы (объекты сертификации)
+                    Область распространения
                 </strong>
                 <br />
-                <p>{currentItem?.reg_date}</p>
+                <p>{currentItem?.area}</p>
+
                 <strong>
                     <br />
-                    Изображение знака
+                    Логотип
                 </strong>
                 <br />
-                <p>{currentItem?.reg_date}</p>
-                <strong>
+                <p>{currentItem?.logo}</p>
+
+                {/* <strong>
                     <br />
                     Статус
                 </strong>
                 <br />
-                <p>{currentItem?.status || 'нет данных'}</p>
+                <p>{currentItem?.status || 'нет данных'}</p> */}
             </div>
-            <div className="btn__card">
-                <ButtonRegistry text="Список членов СДС" path={'/spisok2'} />
+            {/* <div className="btn__card">
+                <ButtonRegistry
+                    text="Список членов СДС"
+                    path={'/certificates/list'}
+                />
                 <ButtonRegistry
                     text="Сведения о компенсации"
-                    path={'/spisok3'}
+                    path={'/certificates/list'}
                 />
                 <ButtonRegistry
                     text="Выгрузить реестр членов СДС"
-                    path={'/spisok3'}
+                    path={'/certificates/list'}
                 />
-            </div>
+            </div> */}
         </div>
     );
-
-    //     };
-
-    //     return { handleColumns2 };
 }
 
-export default CardItem;
+export default CardRegCertExp;

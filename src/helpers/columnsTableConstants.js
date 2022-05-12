@@ -1,4 +1,4 @@
-export const entriesTableColumns = [
+export const sdsTableColumns = [
     {
         title: '',
         dataIndex: 'id_sds',

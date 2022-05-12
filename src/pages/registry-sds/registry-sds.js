@@ -17,20 +17,14 @@ export const RegistrySds = () => {
     }, [pathname, dispatch]);
 
     const columns = [
-        {
-            title: '',
-            dataIndex: 'id_sds',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 2,
-        },
-        {
-            title: 'Статус ',
-            dataIndex: 'status',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
+        //    {
+        //        title: '',
+        //        dataIndex: 'id',
+        //        data_type: 'string',
+        //        is_sort: true,
+        //        number_in_row: 2,
+        //    },
+
         {
             title: 'Наименование СДС',
             dataIndex: 'full_name',
@@ -39,22 +33,15 @@ export const RegistrySds = () => {
             number_in_row: 1,
         },
         {
+            title: 'Сокращенное название',
+            dataIndex: 'short_name',
+            data_type: 'string',
+            is_sort: true,
+            number_in_row: 1,
+        },
+        {
             title: 'Регистрационный номер СДС',
-            dataIndex: 'reg_no',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
-        {
-            title: 'Держатель',
-            dataIndex: 'reg_comp',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
-        {
-            title: 'Дата регистрации',
-            dataIndex: 'reg_date',
+            dataIndex: 'registration_number',
             data_type: 'string',
             is_sort: true,
             number_in_row: 1,
