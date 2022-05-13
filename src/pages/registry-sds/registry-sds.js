@@ -1,84 +1,26 @@
 import React, { useEffect } from 'react';
 import { Table } from 'antd';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { getEntries } from '../../store/entries/actions';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { relocateToCard } from '../../helpers/utils';
+import { sdsTableColumns } from '../../helpers/columnsTableConstants';
 import './registry-sds.scss';
 
 export const RegistrySds = () => {
-    const { entries } = useSelector((state) => state.entries);
-    const { pathname } = useLocation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { entries } = useSelector((state) => state.entries);
+    const { pathname } = useLocation();
 
     useEffect(() => {
         dispatch(getEntries(pathname));
     }, [pathname, dispatch]);
 
-    const columns = [
-        //    {
-        //        title: '',
-        //        dataIndex: 'id',
-        //        data_type: 'string',
-        //        is_sort: true,
-        //        number_in_row: 2,
-        //    },
-
-        {
-            title: 'Наименование СДС',
-            dataIndex: 'full_name',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
-        {
-            title: 'Сокращенное название',
-            dataIndex: 'short_name',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
-        {
-            title: 'Регистрационный номер СДС',
-            dataIndex: 'registration_number',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
-    ];
-
-    const relocateToCard = (record) => {
-        return {
-            onClick: (e) => {
-                e.preventDefault();
-                switch (pathname) {
-                    case '/organ-certifications/list':
-                        navigate('/organ-certification/view/' + record.id);
-                        break;
-
-                    case '/organ-certification-experts/list':
-                        navigate(
-                            '/organ-certification-expert/view/' + record.id
-                        );
-                        break;
-
-                    case '/certificates/list':
-                        navigate('/certificate/view/' + record.id);
-                        break;
-
-                    default:
-                        navigate('/standard-certification/view/' + record.id);
-                        break;
-                }
-            },
-        };
-    };
-
     return (
         <div>
             <Table
-                columns={columns}
+                columns={sdsTableColumns}
                 dataSource={entries}
                 className="registry-sro__table"
                 size="medium"
@@ -89,7 +31,7 @@ export const RegistrySds = () => {
                     // itemRender: itemRender
                     total: entries.length,
                 }}
-                onRow={(record) => relocateToCard(record)}
+                onRow={(record) => relocateToCard(record, pathname, navigate)}
                 rowKey={(obj) => obj.id}
             />
         </div>

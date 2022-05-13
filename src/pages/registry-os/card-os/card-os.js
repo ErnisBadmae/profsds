@@ -1,18 +1,14 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { ButtonRegistry } from '../../../components/buttons/button-registry/button-registry';
 import { getView } from '../../../store/entries/actions';
+import { correctlyDate } from '../../../helpers/utils';
 
 import './card-item.css';
 
 function CardOs(props) {
-    const { pathname } = useLocation();
-
-    //     console.log(pathname, 'pathnamefromcardcurrent');
-    //     const { id } = useParams();
     const dispatch = useDispatch();
-
+    const { pathname } = useLocation();
     const { currentCard } = useSelector((state) => state.entries);
 
     const currentItem = currentCard?.reduce((acc, el, i) => {
@@ -21,8 +17,7 @@ function CardOs(props) {
             ...el,
         };
     }, {});
-    //     const currentItem = currentCard ?? Object.assign({}, currentCard);
-    //     const currentItem = entries.find((el) => el.id_sds === id);
+
     useEffect(() => {
         dispatch(getView(pathname));
     }, [pathname, dispatch]);
@@ -41,9 +36,9 @@ function CardOs(props) {
                 <p>{currentItem?.certificate_number}</p>
                 <br />
 
-                {/* <strong>Дата решения об аккредитации</strong>
+                <strong>Дата решения об аккредитации</strong>
                 <br />
-                <p>{currentItem?.certificate_date}</p> */}
+                <p>{correctlyDate(currentItem?.certificate_date)}</p>
 
                 <strong>
                     <br />
@@ -106,20 +101,6 @@ function CardOs(props) {
                 </strong>
                 <br />
                 <p>{currentItem?.status || 'нет данных'}</p> */}
-            </div>
-            <div className="btn__card">
-                <ButtonRegistry
-                    text="Список членов СДС"
-                    path={'/certificates/list'}
-                />
-                <ButtonRegistry
-                    text="Сведения о компенсации"
-                    path={'/certificates/list'}
-                />
-                <ButtonRegistry
-                    text="Выгрузить реестр членов СДС"
-                    path={'/certificates/list'}
-                />
             </div>
         </div>
     );

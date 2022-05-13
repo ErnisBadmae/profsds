@@ -7,8 +7,8 @@ import { RegistryOs } from './pages/registry-os/registry-os';
 import { RegistryCertificates } from './pages/registry-certificates/registry-certificates';
 import CardSertificate from './pages/registry-certificates/card-certificates/card-certificates';
 import CardOs from './pages/registry-os/card-os/card-os';
-import CardSds from './pages/registry-certificate-expert/card-reg-cert-exp/card-reg-cert-exp';
 import CardExpert from './pages/registry-certificate-expert/card-reg-cert-exp/card-reg-cert-exp';
+import CardSds from './pages/registry-sds/card-sds/card-sds';
 
 function App() {
     return (

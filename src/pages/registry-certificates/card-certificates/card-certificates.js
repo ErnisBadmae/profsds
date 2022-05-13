@@ -1,18 +1,14 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { ButtonRegistry } from '../../../components/buttons/button-registry/button-registry';
 import { getView } from '../../../store/entries/actions';
+import { correctlyDate } from '../../../helpers/utils';
 
 import './card-item.css';
 
 function CardSertificate(props) {
-    const { pathname } = useLocation();
-
-    //     console.log(pathname, 'pathnamefromcardcurrent');
-    //     const { id } = useParams();
     const dispatch = useDispatch();
-
+    const { pathname } = useLocation();
     const { currentCard } = useSelector((state) => state.entries);
 
     const currentItem = currentCard?.reduce((acc, el, i) => {
@@ -21,8 +17,7 @@ function CardSertificate(props) {
             ...el,
         };
     }, {});
-    //     const currentItem = currentCard ?? Object.assign({}, currentCard);
-    //     const currentItem = entries.find((el) => el.id_sds === id);
+
     useEffect(() => {
         dispatch(getView(pathname));
     }, [pathname, dispatch]);
@@ -48,18 +43,18 @@ function CardSertificate(props) {
                 </strong>
                 <p>{currentItem?.certificate_form}</p>
 
-                {/* <strong>
+                <strong>
                     <br />
                     Дата выдачи
                 </strong>
                 <br />
-                <p>{currentItem?.certificate_date}</p> */}
+                <p>{correctlyDate(currentItem?.certificate_date)}</p>
                 <strong>
                     <br />
                     Срок действия
                 </strong>
                 <br />
-                <p>{currentItem?.valid_date}</p>
+                <p>{correctlyDate(currentItem?.valid_date)}</p>
 
                 <strong>
                     <br />
@@ -96,20 +91,6 @@ function CardSertificate(props) {
                 <br />
                 <p>{currentItem?.status || 'нет данных'}</p> */}
             </div>
-            {/* <div className="btn__card">
-                <ButtonRegistry
-                    text="Список членов СДС"
-                    path={'/certificates/list'}
-                />
-                <ButtonRegistry
-                    text="Сведения о компенсации"
-                    path={'/certificates/list'}
-                />
-                <ButtonRegistry
-                    text="Выгрузить реестр членов СДС"
-                    path={'/certificates/list'}
-                />
-            </div> */}
         </div>
     );
 }

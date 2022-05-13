@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { ButtonRegistry } from '../../../components/buttons/button-registry/button-registry';
+import { correctlyDate } from '../../../helpers/utils';
 import { getView } from '../../../store/entries/actions';
 
 import './card-item.css';
 
-function CardRegCertExp(props) {
+function CardSds(props) {
     const { pathname } = useLocation();
 
     //     console.log(pathname, 'pathnamefromcardcurrent');
@@ -42,11 +42,11 @@ function CardRegCertExp(props) {
                 <br />
                 <p>{currentItem?.registration_number}</p>
 
-                {/* <strong>
+                <strong>
                     <br />
-                  
+                    Дата регистрации
                 </strong>
-                <p>{currentItem?.registration_date}</p> */}
+                <p>{correctlyDate(currentItem?.registration_date)}</p>
 
                 <strong>
                     <br />
@@ -101,4 +101,4 @@ function CardRegCertExp(props) {
     );
 }
 
-export default CardRegCertExp;
+export default CardSds;

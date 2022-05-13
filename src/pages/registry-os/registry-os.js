@@ -3,65 +3,25 @@ import { Table } from 'antd';
 import { getEntries } from '../../store/entries/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { relocateToCard } from '../../helpers/utils';
+import { OsTableColumn } from '../../helpers/columnsTableConstants';
 
 import './registry-os.scss';
 
 export const RegistryOs = () => {
-    const { entries } = useSelector((state) => state.entries);
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    const { entries } = useSelector((state) => state.entries);
     const { pathname } = useLocation();
 
     useEffect(() => {
         dispatch(getEntries(pathname));
     }, [pathname, dispatch]);
 
-    const columns = [
-        //    {
-        //        title: '',
-        //        dataIndex: 'id',
-        //        data_type: 'string',
-        //        is_sort: true,
-        //        number_in_row: 2,
-        //    },
-        {
-            title: 'Наименование',
-            dataIndex: 'full_name_organ_certification',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
-        {
-            title: 'Сокращенное название',
-            dataIndex: 'short_name_organ_certification',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
-        {
-            title: 'Номер сертификата',
-            dataIndex: 'certificate_number',
-            data_type: 'string',
-            is_sort: true,
-            number_in_row: 1,
-        },
-    ];
-    const relocateToCard = (record) => {
-        //    console.log(record, 'recorddddddd');
-        return {
-            onClick: (e) => {
-                e.preventDefault();
-                navigate('/organ-certification/view/' + 1);
-            },
-        };
-    };
-
     return (
         <div>
             <Table
-                columns={columns}
+                columns={OsTableColumn}
                 dataSource={entries}
                 className="registry-sro__table"
                 size="medium"
@@ -72,8 +32,8 @@ export const RegistryOs = () => {
                     // itemRender: itemRender
                     total: entries.length,
                 }}
-                onRow={(record) => relocateToCard(record)}
-                rowKey={(obj) => obj.id}
+                onRow={(record) => relocateToCard(record, pathname, navigate)}
+                rowKey={(obj) => obj.full_name_organ_certification}
             />
         </div>
     );

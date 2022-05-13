@@ -1,56 +1,43 @@
 export const sdsTableColumns = [
     {
         title: '',
-        dataIndex: 'id_sds',
+        dataIndex: 'id',
         data_type: 'string',
         is_sort: true,
         number_in_row: 2,
+        sorter: (a, b) => a.id - b.id,
+        showSorterTooltip: false,
+        defaultSortOrder: 'ascend',
+        //   sortDirections: ['descend', 'ascend'],
     },
-    {
-        title: 'Статус ',
-        dataIndex: 'status',
-        data_type: 'string',
-        is_sort: true,
-        number_in_row: 1,
-    },
+
     {
         title: 'Наименование СДС',
         dataIndex: 'full_name',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
+        align: 'center',
+    },
+    {
+        title: 'Сокращенное название',
+        dataIndex: 'short_name',
+        data_type: 'string',
+        is_sort: true,
+        number_in_row: 1,
+        align: 'center',
     },
     {
         title: 'Регистрационный номер СДС',
-        dataIndex: 'reg_no',
+        dataIndex: 'registration_number',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
-    },
-    {
-        title: 'Держатель',
-        dataIndex: 'reg_comp',
-        data_type: 'string',
-        is_sort: true,
-        number_in_row: 1,
-    },
-    {
-        title: 'Дата регистрации',
-        dataIndex: 'reg_date',
-        data_type: 'string',
-        is_sort: true,
-        number_in_row: 1,
+        align: 'center',
     },
 ];
 
-export const organCertificationTableColumn = [
-    {
-        title: '',
-        dataIndex: 'id_sds',
-        data_type: 'string',
-        is_sort: true,
-        number_in_row: 2,
-    },
+export const OsTableColumn = [
     {
         title: 'Наименование',
         dataIndex: 'full_name_organ_certification',
@@ -65,20 +52,9 @@ export const organCertificationTableColumn = [
         is_sort: true,
         number_in_row: 1,
     },
-];
-
-export const expertsListTableColumn = [
     {
-        title: '',
-        dataIndex: 'id',
-        data_type: 'string',
-        is_sort: true,
-        number_in_row: 2,
-    },
-
-    {
-        title: 'Фамилия, имя, отчество эксперта',
-        dataIndex: 'expert_name_link',
+        title: 'Номер сертификата',
+        dataIndex: 'certificate_number',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
@@ -92,17 +68,20 @@ export const certifacatesTableColumn = [
         data_type: 'string',
         is_sort: true,
         number_in_row: 2,
+        sorter: (a, b) => a.id - b.id,
+        showSorterTooltip: false,
+        defaultSortOrder: 'ascend',
     },
     {
-        title: '№ сертификата',
-        dataIndex: 'number',
+        title: 'Наименование организации',
+        dataIndex: 'company_name',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
     },
     {
-        title: 'Наименование организации',
-        dataIndex: 'company_name',
+        title: '№ сертификата',
+        dataIndex: 'number',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
@@ -115,9 +94,22 @@ export const certifacatesTableColumn = [
         is_sort: true,
         number_in_row: 1,
     },
+];
+
+export const certificateExpertsTable = [
     {
-        title: 'Валидация',
-        dataIndex: 'valid_date',
+        title: '',
+        dataIndex: 'id',
+        data_type: 'string',
+        is_sort: true,
+        number_in_row: 2,
+        sorter: (a, b) => a.id - b.id,
+        showSorterTooltip: false,
+        defaultSortOrder: 'ascend',
+    },
+    {
+        title: 'Имя Эксперта',
+        dataIndex: 'expert_name',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
