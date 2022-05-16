@@ -3525,3 +3525,630 @@ Search for the keywords to learn more about each warning.
  DEBUG [59796ffe] 	tar: 
  DEBUG [59796ffe] 	Exiting with failure status due to previous errors
  DEBUG [59796ffe] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-05-16 12:44:50 +0300 cap develop deploy BRANCH=test-branchcd ../..
+  INFO ---------------------------------------------------------------------------
+  INFO [bcceed37] Running /usr/bin/env mkdir -p /tmp/open-reestr-nopriz as deploy@10.102.55.48
+ DEBUG [bcceed37] Command: /usr/bin/env mkdir -p /tmp/open-reestr-nopriz
+  INFO [bcceed37] Finished in 0.707 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh 0.0%
+  INFO Uploading /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh 100.0%
+  INFO [5b8760e3] Running /usr/bin/env chmod 700 /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh as deploy@10.102.55.48
+ DEBUG [5b8760e3] Command: /usr/bin/env chmod 700 /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh
+  INFO [5b8760e3] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [301daecc] Running /usr/bin/env git ls-remote git@git.nms:prof_sdc/front_open_profsdc.git HEAD as deploy@10.102.55.48
+ DEBUG [301daecc] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git ls-remote git@git.nms:prof_sdc/front_open_profsdc.git HEAD )
+ DEBUG [301daecc] 	5d95f58251426fe095877dcdd95f625a3385868c	HEAD
+  INFO [301daecc] Finished in 0.925 seconds with exit status 0 (successful).
+  INFO [4c45e9c0] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared /var/www/front_open_profsdc/releases as deploy@10.102.55.48
+ DEBUG [4c45e9c0] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared /var/www/front_open_profsdc/releases
+  INFO [4c45e9c0] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [b2268c27] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared/node_modules as deploy@10.102.55.48
+ DEBUG [b2268c27] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared/node_modules
+  INFO [b2268c27] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [8872abf5] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared as deploy@10.102.55.48
+ DEBUG [8872abf5] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared
+  INFO [8872abf5] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [fc8d3aa9] Running [ -f /var/www/front_open_profsdc/shared/.env ] as deploy@10.102.55.48
+ DEBUG [fc8d3aa9] Command: [ -f /var/www/front_open_profsdc/shared/.env ]
+ DEBUG [fc8d3aa9] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [774591d2] Running [ -f /var/www/front_open_profsdc/shared/.env.production ] as deploy@10.102.55.48
+ DEBUG [774591d2] Command: [ -f /var/www/front_open_profsdc/shared/.env.production ]
+ DEBUG [774591d2] Finished in 0.085 seconds with exit status 0 (successful).
+ DEBUG [1619525e] Running [ -f /var/www/front_open_profsdc/current/REVISION ] as deploy@10.102.55.48
+ DEBUG [1619525e] Command: [ -f /var/www/front_open_profsdc/current/REVISION ]
+ DEBUG [1619525e] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [aec1c99f] Running /usr/bin/env cat /var/www/front_open_profsdc/current/REVISION 2>/dev/null as deploy@10.102.55.48
+ DEBUG [aec1c99f] Command: /usr/bin/env cat /var/www/front_open_profsdc/current/REVISION 2>/dev/null
+ DEBUG [aec1c99f] 	e6fce6ddd32d57b17a52b35b1c09852dae6e89bb
+ DEBUG [aec1c99f] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [82c9b46c] Running [ -f /var/www/front_open_profsdc/repo/HEAD ] as deploy@10.102.55.48
+ DEBUG [82c9b46c] Command: [ -f /var/www/front_open_profsdc/repo/HEAD ]
+ DEBUG [82c9b46c] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/front_open_profsdc/repo
+ DEBUG [47b7c8df] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [47b7c8df] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [47b7c8df] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [096fc6c9] Running /usr/bin/env git remote set-url origin git@git.nms:prof_sdc/front_open_profsdc.git as deploy@10.102.55.48
+ DEBUG [096fc6c9] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git remote set-url origin git@git.nms:prof_sdc/front_open_profsdc.git )
+  INFO [096fc6c9] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [03719aae] Running /usr/bin/env git remote update --prune as deploy@10.102.55.48
+ DEBUG [03719aae] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [03719aae] 	Fetching origin
+ DEBUG [03719aae] 	From git.nms:prof_sdc/front_open_profsdc
+   5e8fe15..5d95f58  test-branch -> test-branch
+  INFO [03719aae] Finished in 0.923 seconds with exit status 0 (successful).
+ DEBUG [948b1cd2] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [948b1cd2] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [948b1cd2] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [baa5be93] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516094458 as deploy@10.102.55.48
+ DEBUG [baa5be93] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516094458 )
+  INFO [baa5be93] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [31d87480] Running /usr/bin/env git archive test-branchcd | /usr/bin/env tar -x -f - -C /var/www/front_open_profsdc/releases/20220516094458 as deploy@10.102.55.48
+ DEBUG [31d87480] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git archive test-branchcd | /usr/bin/env tar -x -f - -C /var/www/front_open_profsdc/releases/20220516094458 )
+ DEBUG [31d87480] 	fatal: not a valid object name: test-branchcd
+ DEBUG [31d87480] 	tar: This does not look like a tar archive
+tar: 
+ DEBUG [31d87480] 	Exiting with failure status due to previous errors
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-05-16 13:35:43 +0300 cap develop deploy BRANCH=test-branch
+  INFO ---------------------------------------------------------------------------
+  INFO [d5c39810] Running /usr/bin/env mkdir -p /tmp/open-reestr-nopriz as deploy@10.102.55.48
+ DEBUG [d5c39810] Command: /usr/bin/env mkdir -p /tmp/open-reestr-nopriz
+  INFO [d5c39810] Finished in 0.740 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh 0.0%
+  INFO Uploading /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh 100.0%
+  INFO [912d068d] Running /usr/bin/env chmod 700 /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh as deploy@10.102.55.48
+ DEBUG [912d068d] Command: /usr/bin/env chmod 700 /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh
+  INFO [912d068d] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [760ecac2] Running /usr/bin/env git ls-remote git@git.nms:prof_sdc/front_open_profsdc.git HEAD as deploy@10.102.55.48
+ DEBUG [760ecac2] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git ls-remote git@git.nms:prof_sdc/front_open_profsdc.git HEAD )
+ DEBUG [760ecac2] 	5d95f58251426fe095877dcdd95f625a3385868c	HEAD
+  INFO [760ecac2] Finished in 0.973 seconds with exit status 0 (successful).
+  INFO [3b8bc5e0] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared /var/www/front_open_profsdc/releases as deploy@10.102.55.48
+ DEBUG [3b8bc5e0] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared /var/www/front_open_profsdc/releases
+  INFO [3b8bc5e0] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [fd20d123] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared/node_modules as deploy@10.102.55.48
+ DEBUG [fd20d123] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared/node_modules
+  INFO [fd20d123] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [8f5d40ba] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared as deploy@10.102.55.48
+ DEBUG [8f5d40ba] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared
+  INFO [8f5d40ba] Finished in 0.095 seconds with exit status 0 (successful).
+ DEBUG [dc066ca9] Running [ -f /var/www/front_open_profsdc/shared/.env ] as deploy@10.102.55.48
+ DEBUG [dc066ca9] Command: [ -f /var/www/front_open_profsdc/shared/.env ]
+ DEBUG [dc066ca9] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [c35a523e] Running [ -f /var/www/front_open_profsdc/shared/.env.production ] as deploy@10.102.55.48
+ DEBUG [c35a523e] Command: [ -f /var/www/front_open_profsdc/shared/.env.production ]
+ DEBUG [c35a523e] Finished in 0.087 seconds with exit status 0 (successful).
+ DEBUG [ef2838f5] Running [ -f /var/www/front_open_profsdc/current/REVISION ] as deploy@10.102.55.48
+ DEBUG [ef2838f5] Command: [ -f /var/www/front_open_profsdc/current/REVISION ]
+ DEBUG [ef2838f5] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [a3498187] Running /usr/bin/env cat /var/www/front_open_profsdc/current/REVISION 2>/dev/null as deploy@10.102.55.48
+ DEBUG [a3498187] Command: /usr/bin/env cat /var/www/front_open_profsdc/current/REVISION 2>/dev/null
+ DEBUG [a3498187] 	e6fce6ddd32d57b17a52b35b1c09852dae6e89bb
+ DEBUG [a3498187] Finished in 0.314 seconds with exit status 0 (successful).
+ DEBUG [6f47b62f] Running [ -f /var/www/front_open_profsdc/repo/HEAD ] as deploy@10.102.55.48
+ DEBUG [6f47b62f] Command: [ -f /var/www/front_open_profsdc/repo/HEAD ]
+ DEBUG [6f47b62f] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/front_open_profsdc/repo
+ DEBUG [c0bc3d1c] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [c0bc3d1c] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [c0bc3d1c] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [9c7689da] Running /usr/bin/env git remote set-url origin git@git.nms:prof_sdc/front_open_profsdc.git as deploy@10.102.55.48
+ DEBUG [9c7689da] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git remote set-url origin git@git.nms:prof_sdc/front_open_profsdc.git )
+  INFO [9c7689da] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [e0acba9e] Running /usr/bin/env git remote update --prune as deploy@10.102.55.48
+ DEBUG [e0acba9e] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [e0acba9e] 	Fetching origin
+  INFO [e0acba9e] Finished in 0.827 seconds with exit status 0 (successful).
+ DEBUG [459b0199] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [459b0199] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [459b0199] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [71051706] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516103552 as deploy@10.102.55.48
+ DEBUG [71051706] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516103552 )
+  INFO [71051706] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [aadaeeaf] Running /usr/bin/env git archive test-branch | /usr/bin/env tar -x -f - -C /var/www/front_open_profsdc/releases/20220516103552 as deploy@10.102.55.48
+ DEBUG [aadaeeaf] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git archive test-branch | /usr/bin/env tar -x -f - -C /var/www/front_open_profsdc/releases/20220516103552 )
+  INFO [aadaeeaf] Finished in 0.105 seconds with exit status 0 (successful).
+ DEBUG [ce822d6d] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [ce822d6d] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [ce822d6d] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [0502d439] Running /usr/bin/env git rev-list --max-count=1 test-branch as deploy@10.102.55.48
+ DEBUG [0502d439] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git rev-list --max-count=1 test-branch )
+ DEBUG [0502d439] 	5d95f58251426fe095877dcdd95f625a3385868c
+ DEBUG [0502d439] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [70baa87b] Running if test ! -d /var/www/front_open_profsdc/releases/20220516103552; then echo "Directory does not exist '/var/www/front_open_profsdc/releases/20220516103552'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [70baa87b] Command: if test ! -d /var/www/front_open_profsdc/releases/20220516103552; then echo "Directory does not exist '/var/www/front_open_profsdc/releases/20220516103552'" 1>&2; false; fi
+ DEBUG [70baa87b] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO [39c6ef6c] Running /usr/bin/env echo "5d95f58251426fe095877dcdd95f625a3385868c" > REVISION as deploy@10.102.55.48
+ DEBUG [39c6ef6c] Command: cd /var/www/front_open_profsdc/releases/20220516103552 && /usr/bin/env echo "5d95f58251426fe095877dcdd95f625a3385868c" > REVISION
+  INFO [39c6ef6c] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO [568671c2] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516103552 as deploy@10.102.55.48
+ DEBUG [568671c2] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516103552
+  INFO [568671c2] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [7f60a2c8] Running [ -L /var/www/front_open_profsdc/releases/20220516103552/.env ] as deploy@10.102.55.48
+ DEBUG [7f60a2c8] Command: [ -L /var/www/front_open_profsdc/releases/20220516103552/.env ]
+ DEBUG [7f60a2c8] Finished in 0.089 seconds with exit status 1 (failed).
+ DEBUG [e6ac7e11] Running [ -f /var/www/front_open_profsdc/releases/20220516103552/.env ] as deploy@10.102.55.48
+ DEBUG [e6ac7e11] Command: [ -f /var/www/front_open_profsdc/releases/20220516103552/.env ]
+ DEBUG [e6ac7e11] Finished in 0.046 seconds with exit status 1 (failed).
+  INFO [1f326aad] Running /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env /var/www/front_open_profsdc/releases/20220516103552/.env as deploy@10.102.55.48
+ DEBUG [1f326aad] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env /var/www/front_open_profsdc/releases/20220516103552/.env
+  INFO [1f326aad] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [54aac7f8] Running [ -L /var/www/front_open_profsdc/releases/20220516103552/.env.production ] as deploy@10.102.55.48
+ DEBUG [54aac7f8] Command: [ -L /var/www/front_open_profsdc/releases/20220516103552/.env.production ]
+ DEBUG [54aac7f8] Finished in 0.046 seconds with exit status 1 (failed).
+ DEBUG [6ce3f0e5] Running [ -f /var/www/front_open_profsdc/releases/20220516103552/.env.production ] as deploy@10.102.55.48
+ DEBUG [6ce3f0e5] Command: [ -f /var/www/front_open_profsdc/releases/20220516103552/.env.production ]
+ DEBUG [6ce3f0e5] Finished in 0.088 seconds with exit status 1 (failed).
+  INFO [77ed6cad] Running /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env.production /var/www/front_open_profsdc/releases/20220516103552/.env.production as deploy@10.102.55.48
+ DEBUG [77ed6cad] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env.production /var/www/front_open_profsdc/releases/20220516103552/.env.production
+  INFO [77ed6cad] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [e2b50b58] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516103552 as deploy@10.102.55.48
+ DEBUG [e2b50b58] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516103552
+  INFO [e2b50b58] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [eaebdc4f] Running [ -L /var/www/front_open_profsdc/releases/20220516103552/node_modules ] as deploy@10.102.55.48
+ DEBUG [eaebdc4f] Command: [ -L /var/www/front_open_profsdc/releases/20220516103552/node_modules ]
+ DEBUG [eaebdc4f] Finished in 0.044 seconds with exit status 1 (failed).
+ DEBUG [906286b7] Running [ -d /var/www/front_open_profsdc/releases/20220516103552/node_modules ] as deploy@10.102.55.48
+ DEBUG [906286b7] Command: [ -d /var/www/front_open_profsdc/releases/20220516103552/node_modules ]
+ DEBUG [906286b7] Finished in 0.086 seconds with exit status 1 (failed).
+  INFO [89df7e31] Running /usr/bin/env ln -s /var/www/front_open_profsdc/shared/node_modules /var/www/front_open_profsdc/releases/20220516103552/node_modules as deploy@10.102.55.48
+ DEBUG [89df7e31] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/shared/node_modules /var/www/front_open_profsdc/releases/20220516103552/node_modules
+  INFO [89df7e31] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [5d161991] Running /usr/bin/env ln -s /var/www/front_open_profsdc/releases/20220516103552 /var/www/front_open_profsdc/releases/current as deploy@10.102.55.48
+ DEBUG [5d161991] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/releases/20220516103552 /var/www/front_open_profsdc/releases/current
+  INFO [5d161991] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [203c5562] Running /usr/bin/env mv /var/www/front_open_profsdc/releases/current /var/www/front_open_profsdc as deploy@10.102.55.48
+ DEBUG [203c5562] Command: /usr/bin/env mv /var/www/front_open_profsdc/releases/current /var/www/front_open_profsdc
+  INFO [203c5562] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [22521d7f] Running [ -d /var/www/front_open_profsdc/releases/20220516103552 ] as deploy@10.102.55.48
+ DEBUG [22521d7f] Command: [ -d /var/www/front_open_profsdc/releases/20220516103552 ]
+ DEBUG [22521d7f] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [6700e51e] Running cd '/var/www/front_open_profsdc/releases/20220516103552'; as deploy@10.102.55.48
+ DEBUG [6700e51e] Command: cd '/var/www/front_open_profsdc/releases/20220516103552';
+  INFO [6700e51e] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [8259fdd4] Running cd '/var/www/front_open_profsdc/releases/20220516103552'; npm install; as deploy@10.102.55.48
+ DEBUG [8259fdd4] Command: cd '/var/www/front_open_profsdc/releases/20220516103552'; npm install;
+ DEBUG [8259fdd4] 	npm
+ DEBUG [8259fdd4] 	 
+ DEBUG [8259fdd4] 	WARN
+ DEBUG [8259fdd4] 	 
+ DEBUG [8259fdd4] 	reify
+ DEBUG [8259fdd4] 	 Removing non-directory /var/www/front_open_profsdc/releases/20220516103552/node_modules
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-05-16 13:40:30 +0300 cap develop deploy BRANCH=test-branch
+  INFO ---------------------------------------------------------------------------
+  INFO [db1a2217] Running /usr/bin/env mkdir -p /tmp/open-reestr-nopriz as deploy@10.102.55.48
+ DEBUG [db1a2217] Command: /usr/bin/env mkdir -p /tmp/open-reestr-nopriz
+  INFO [db1a2217] Finished in 0.691 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh 0.0%
+  INFO Uploading /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh 100.0%
+  INFO [ff3bc3eb] Running /usr/bin/env chmod 700 /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh as deploy@10.102.55.48
+ DEBUG [ff3bc3eb] Command: /usr/bin/env chmod 700 /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh
+  INFO [ff3bc3eb] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [c362099e] Running /usr/bin/env git ls-remote git@git.nms:prof_sdc/front_open_profsdc.git HEAD as deploy@10.102.55.48
+ DEBUG [c362099e] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git ls-remote git@git.nms:prof_sdc/front_open_profsdc.git HEAD )
+ DEBUG [c362099e] 	5d95f58251426fe095877dcdd95f625a3385868c	HEAD
+  INFO [c362099e] Finished in 0.989 seconds with exit status 0 (successful).
+  INFO [eb954601] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared /var/www/front_open_profsdc/releases as deploy@10.102.55.48
+ DEBUG [eb954601] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared /var/www/front_open_profsdc/releases
+  INFO [eb954601] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [e7140026] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared/node_modules as deploy@10.102.55.48
+ DEBUG [e7140026] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared/node_modules
+  INFO [e7140026] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [9b7af4e0] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared as deploy@10.102.55.48
+ DEBUG [9b7af4e0] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared
+  INFO [9b7af4e0] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [e60efb94] Running [ -f /var/www/front_open_profsdc/shared/.env ] as deploy@10.102.55.48
+ DEBUG [e60efb94] Command: [ -f /var/www/front_open_profsdc/shared/.env ]
+ DEBUG [e60efb94] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [76d0bb4d] Running [ -f /var/www/front_open_profsdc/shared/.env.production ] as deploy@10.102.55.48
+ DEBUG [76d0bb4d] Command: [ -f /var/www/front_open_profsdc/shared/.env.production ]
+ DEBUG [76d0bb4d] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [451f9439] Running [ -f /var/www/front_open_profsdc/current/REVISION ] as deploy@10.102.55.48
+ DEBUG [451f9439] Command: [ -f /var/www/front_open_profsdc/current/REVISION ]
+ DEBUG [451f9439] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [54464a23] Running /usr/bin/env cat /var/www/front_open_profsdc/current/REVISION 2>/dev/null as deploy@10.102.55.48
+ DEBUG [54464a23] Command: /usr/bin/env cat /var/www/front_open_profsdc/current/REVISION 2>/dev/null
+ DEBUG [54464a23] 	5d95f58251426fe095877dcdd95f625a3385868c
+ DEBUG [54464a23] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [19cf1cd2] Running [ -f /var/www/front_open_profsdc/repo/HEAD ] as deploy@10.102.55.48
+ DEBUG [19cf1cd2] Command: [ -f /var/www/front_open_profsdc/repo/HEAD ]
+ DEBUG [19cf1cd2] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/front_open_profsdc/repo
+ DEBUG [7158b5d0] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [7158b5d0] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [7158b5d0] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [de029943] Running /usr/bin/env git remote set-url origin git@git.nms:prof_sdc/front_open_profsdc.git as deploy@10.102.55.48
+ DEBUG [de029943] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git remote set-url origin git@git.nms:prof_sdc/front_open_profsdc.git )
+  INFO [de029943] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [30c0f7b3] Running /usr/bin/env git remote update --prune as deploy@10.102.55.48
+ DEBUG [30c0f7b3] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [30c0f7b3] 	Fetching origin
+  INFO [30c0f7b3] Finished in 0.837 seconds with exit status 0 (successful).
+ DEBUG [5f4efbcf] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [5f4efbcf] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [5f4efbcf] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [deee3786] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516104039 as deploy@10.102.55.48
+ DEBUG [deee3786] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516104039 )
+  INFO [deee3786] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [0134c8ca] Running /usr/bin/env git archive test-branch | /usr/bin/env tar -x -f - -C /var/www/front_open_profsdc/releases/20220516104039 as deploy@10.102.55.48
+ DEBUG [0134c8ca] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git archive test-branch | /usr/bin/env tar -x -f - -C /var/www/front_open_profsdc/releases/20220516104039 )
+  INFO [0134c8ca] Finished in 0.106 seconds with exit status 0 (successful).
+ DEBUG [98a61d51] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [98a61d51] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [98a61d51] Finished in 0.252 seconds with exit status 0 (successful).
+ DEBUG [bffb26ef] Running /usr/bin/env git rev-list --max-count=1 test-branch as deploy@10.102.55.48
+ DEBUG [bffb26ef] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git rev-list --max-count=1 test-branch )
+ DEBUG [bffb26ef] 	5d95f58251426fe095877dcdd95f625a3385868c
+ DEBUG [bffb26ef] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [ad708620] Running if test ! -d /var/www/front_open_profsdc/releases/20220516104039; then echo "Directory does not exist '/var/www/front_open_profsdc/releases/20220516104039'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [ad708620] Command: if test ! -d /var/www/front_open_profsdc/releases/20220516104039; then echo "Directory does not exist '/var/www/front_open_profsdc/releases/20220516104039'" 1>&2; false; fi
+ DEBUG [ad708620] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [7bd9c71f] Running /usr/bin/env echo "5d95f58251426fe095877dcdd95f625a3385868c" > REVISION as deploy@10.102.55.48
+ DEBUG [7bd9c71f] Command: cd /var/www/front_open_profsdc/releases/20220516104039 && /usr/bin/env echo "5d95f58251426fe095877dcdd95f625a3385868c" > REVISION
+  INFO [7bd9c71f] Finished in 0.089 seconds with exit status 0 (successful).
+  INFO [72d047aa] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516104039 as deploy@10.102.55.48
+ DEBUG [72d047aa] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516104039
+  INFO [72d047aa] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [97667280] Running [ -L /var/www/front_open_profsdc/releases/20220516104039/.env ] as deploy@10.102.55.48
+ DEBUG [97667280] Command: [ -L /var/www/front_open_profsdc/releases/20220516104039/.env ]
+ DEBUG [97667280] Finished in 0.097 seconds with exit status 1 (failed).
+ DEBUG [42aa4e46] Running [ -f /var/www/front_open_profsdc/releases/20220516104039/.env ] as deploy@10.102.55.48
+ DEBUG [42aa4e46] Command: [ -f /var/www/front_open_profsdc/releases/20220516104039/.env ]
+ DEBUG [42aa4e46] Finished in 0.062 seconds with exit status 1 (failed).
+  INFO [275468ea] Running /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env /var/www/front_open_profsdc/releases/20220516104039/.env as deploy@10.102.55.48
+ DEBUG [275468ea] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env /var/www/front_open_profsdc/releases/20220516104039/.env
+  INFO [275468ea] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [1690c934] Running [ -L /var/www/front_open_profsdc/releases/20220516104039/.env.production ] as deploy@10.102.55.48
+ DEBUG [1690c934] Command: [ -L /var/www/front_open_profsdc/releases/20220516104039/.env.production ]
+ DEBUG [1690c934] Finished in 0.052 seconds with exit status 1 (failed).
+ DEBUG [5fab37b9] Running [ -f /var/www/front_open_profsdc/releases/20220516104039/.env.production ] as deploy@10.102.55.48
+ DEBUG [5fab37b9] Command: [ -f /var/www/front_open_profsdc/releases/20220516104039/.env.production ]
+ DEBUG [5fab37b9] Finished in 0.089 seconds with exit status 1 (failed).
+  INFO [9eacbdfc] Running /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env.production /var/www/front_open_profsdc/releases/20220516104039/.env.production as deploy@10.102.55.48
+ DEBUG [9eacbdfc] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env.production /var/www/front_open_profsdc/releases/20220516104039/.env.production
+  INFO [9eacbdfc] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [66428210] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516104039 as deploy@10.102.55.48
+ DEBUG [66428210] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516104039
+  INFO [66428210] Finished in 0.105 seconds with exit status 0 (successful).
+ DEBUG [3cbb0d79] Running [ -L /var/www/front_open_profsdc/releases/20220516104039/node_modules ] as deploy@10.102.55.48
+ DEBUG [3cbb0d79] Command: [ -L /var/www/front_open_profsdc/releases/20220516104039/node_modules ]
+ DEBUG [3cbb0d79] Finished in 0.057 seconds with exit status 1 (failed).
+ DEBUG [32ff8177] Running [ -d /var/www/front_open_profsdc/releases/20220516104039/node_modules ] as deploy@10.102.55.48
+ DEBUG [32ff8177] Command: [ -d /var/www/front_open_profsdc/releases/20220516104039/node_modules ]
+ DEBUG [32ff8177] Finished in 0.112 seconds with exit status 1 (failed).
+  INFO [0a206c61] Running /usr/bin/env ln -s /var/www/front_open_profsdc/shared/node_modules /var/www/front_open_profsdc/releases/20220516104039/node_modules as deploy@10.102.55.48
+ DEBUG [0a206c61] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/shared/node_modules /var/www/front_open_profsdc/releases/20220516104039/node_modules
+  INFO [0a206c61] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [fb93696f] Running /usr/bin/env ln -s /var/www/front_open_profsdc/releases/20220516104039 /var/www/front_open_profsdc/releases/current as deploy@10.102.55.48
+ DEBUG [fb93696f] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/releases/20220516104039 /var/www/front_open_profsdc/releases/current
+  INFO [fb93696f] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [9cedf8d2] Running /usr/bin/env mv /var/www/front_open_profsdc/releases/current /var/www/front_open_profsdc as deploy@10.102.55.48
+ DEBUG [9cedf8d2] Command: /usr/bin/env mv /var/www/front_open_profsdc/releases/current /var/www/front_open_profsdc
+  INFO [9cedf8d2] Finished in 0.074 seconds with exit status 0 (successful).
+ DEBUG [305cd4b0] Running [ -d /var/www/front_open_profsdc/releases/20220516104039 ] as deploy@10.102.55.48
+ DEBUG [305cd4b0] Command: [ -d /var/www/front_open_profsdc/releases/20220516104039 ]
+ DEBUG [305cd4b0] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [14000af3] Running cd '/var/www/front_open_profsdc/releases/20220516104039'; as deploy@10.102.55.48
+ DEBUG [14000af3] Command: cd '/var/www/front_open_profsdc/releases/20220516104039';
+  INFO [14000af3] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [bb2f49d3] Running cd '/var/www/front_open_profsdc/releases/20220516104039'; npm install; as deploy@10.102.55.48
+ DEBUG [bb2f49d3] Command: cd '/var/www/front_open_profsdc/releases/20220516104039'; npm install;
+ DEBUG [bb2f49d3] 	npm
+ DEBUG [bb2f49d3] 	 
+ DEBUG [bb2f49d3] 	WARN
+ DEBUG [bb2f49d3] 	 
+ DEBUG [bb2f49d3] 	reify
+ DEBUG [bb2f49d3] 	 Removing non-directory /var/www/front_open_profsdc/releases/20220516104039/node_modules
+ DEBUG [bb2f49d3] 	npm
+ DEBUG [bb2f49d3] 	 
+ DEBUG [bb2f49d3] 	WARN
+ DEBUG [bb2f49d3] 	 
+ DEBUG [bb2f49d3] 	deprecated
+ DEBUG [bb2f49d3] 	 source-map-resolve@0.6.0: See https://github.com/lydell/source-map-resolve#deprecated
+ DEBUG [bb2f49d3] 	npm
+ DEBUG [bb2f49d3] 	 
+ DEBUG [bb2f49d3] 	WARN
+ DEBUG [bb2f49d3] 	 
+ DEBUG [bb2f49d3] 	deprecated
+ DEBUG [bb2f49d3] 	 querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+ DEBUG [bb2f49d3] 	npm
+ DEBUG [bb2f49d3] 	 
+ DEBUG [bb2f49d3] 	WARN
+ DEBUG [bb2f49d3] 	 
+ DEBUG [bb2f49d3] 	deprecated
+ DEBUG [bb2f49d3] 	 svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+ DEBUG [bb2f49d3] 	
+added 1321 packages, and audited 1322 packages in 26s
+ DEBUG [bb2f49d3] 	
+ DEBUG [bb2f49d3] 	183 packages are looking for funding
+ DEBUG [bb2f49d3] 	  run `npm fund` for details
+ DEBUG [bb2f49d3] 	
+6 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+  INFO [bb2f49d3] Finished in 26.562 seconds with exit status 0 (successful).
+  INFO [dce630ce] Running cd '/var/www/front_open_profsdc/releases/20220516104039'; npm run build; as deploy@10.102.55.48
+ DEBUG [dce630ce] Command: cd '/var/www/front_open_profsdc/releases/20220516104039'; npm run build;
+ DEBUG [dce630ce] 	
+> my-app@0.1.0 build
+> react-scripts build
+
+ DEBUG [dce630ce] 	Creating an optimized production build...
+ DEBUG [dce630ce] 	Compiled with warnings.
+
+ DEBUG [dce630ce] 	src/components/poisk/poisk.js
+  Line 2:10:   'SearchOutlined' is defined but never used        no-unused-vars
+  Line 5:8:    'axios' is defined but never used                 no-unused-vars
+  Line 10:12:  'data' is assigned a value but never used         no-unused-vars
+  Line 10:18:  'setData' is assigned a value but never used      no-unused-vars
+  Line 11:12:  'value' is assigned a value but never used        no-unused-vars
+  Line 11:19:  'setValue' is assigned a value but never used     no-unused-vars
+  Line 13:11:  'handleReset' is assigned a value but never used  no-unused-vars
+
+src/pages/registry-certificate-expert/registryCertificateExperts.js
+  Line 6:26:  'correctlyDate' is defined but never used  no-unused-vars
+
+src/pages/registry-certificates/registry-certificates.js
+  Line 6:26:  'correctlyDate' is defined but never used  no-unused-vars
+ DEBUG [dce630ce] 	
+Search for the keywords to learn more about each warning.
+ DEBUG [dce630ce] 	To ignore, add // eslint-disable-next-line to the line before.
+
+ DEBUG [dce630ce] 	File sizes after gzip:
+
+ DEBUG [dce630ce] 	  232.84 kB  build/static/js/main.ab58eb1e.js
+ DEBUG [dce630ce] 	  68.02 kB   build/static/css/main.3bd537cd.css
+ DEBUG [dce630ce] 	
+ DEBUG [dce630ce] 	The project was built assuming it is hosted at /.
+ DEBUG [dce630ce] 	You can control this with the homepage field in your package.json.
+ DEBUG [dce630ce] 	
+ DEBUG [dce630ce] 	The build folder is ready to be deployed.
+ DEBUG [dce630ce] 	You may serve it with a static server:
+ DEBUG [dce630ce] 	
+ DEBUG [dce630ce] 	  npm install -g serve
+ DEBUG [dce630ce] 	  serve -s build
+ DEBUG [dce630ce] 	
+ DEBUG [dce630ce] 	Find out more about deployment here:
+ DEBUG [dce630ce] 	
+ DEBUG [dce630ce] 	  https://cra.link/deployment
+ DEBUG [dce630ce] 	
+  INFO [dce630ce] Finished in 45.558 seconds with exit status 0 (successful).
+ DEBUG [a963b957] Running /usr/bin/env ls -x /var/www/front_open_profsdc/releases as deploy@10.102.55.48
+ DEBUG [a963b957] Command: /usr/bin/env ls -x /var/www/front_open_profsdc/releases
+ DEBUG [a963b957] 	20220512114108	20220512120417	20220513113358	20220513120731	20220515185559
+20220516092049	20220516094458	20220516103552	20220516104039
+ DEBUG [a963b957] Finished in 0.087 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 9 deployed releases on 10.102.55.48
+ DEBUG [63d115d0] Running [ -d /var/www/front_open_profsdc/current ] as deploy@10.102.55.48
+ DEBUG [63d115d0] Command: [ -d /var/www/front_open_profsdc/current ]
+ DEBUG [63d115d0] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [c9c62250] Running /usr/bin/env readlink /var/www/front_open_profsdc/current as deploy@10.102.55.48
+ DEBUG [c9c62250] Command: /usr/bin/env readlink /var/www/front_open_profsdc/current
+ DEBUG [c9c62250] 	/var/www/front_open_profsdc/releases/20220516104039
+ DEBUG [c9c62250] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [50965248] Running /usr/bin/env rm -rf /var/www/front_open_profsdc/releases/20220512114108 /var/www/front_open_profsdc/releases/20220512120417 /var/www/front_open_profsdc/releases/20220513113358 /var/www/front_open_profsdc/releases/20220513120731 as deploy@10.102.55.48
+ DEBUG [50965248] Command: /usr/bin/env rm -rf /var/www/front_open_profsdc/releases/20220512114108 /var/www/front_open_profsdc/releases/20220512120417 /var/www/front_open_profsdc/releases/20220513113358 /var/www/front_open_profsdc/releases/20220513120731
+  INFO [50965248] Finished in 11.457 seconds with exit status 0 (successful).
+ DEBUG [9b42c055] Running if test ! -d /var/www/front_open_profsdc/releases; then echo "Directory does not exist '/var/www/front_open_profsdc/releases'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [9b42c055] Command: if test ! -d /var/www/front_open_profsdc/releases; then echo "Directory does not exist '/var/www/front_open_profsdc/releases'" 1>&2; false; fi
+ DEBUG [9b42c055] Finished in 0.085 seconds with exit status 0 (successful).
+  INFO [062262df] Running /usr/bin/env echo "Branch test-branch (at 5d95f58251426fe095877dcdd95f625a3385868c) deployed as release 20220516104039 by ernis" >> /var/www/front_open_profsdc/revisions.log as deploy@10.102.55.48
+ DEBUG [062262df] Command: cd /var/www/front_open_profsdc/releases && /usr/bin/env echo "Branch test-branch (at 5d95f58251426fe095877dcdd95f625a3385868c) deployed as release 20220516104039 by ernis" >> /var/www/front_open_profsdc/revisions.log
+  INFO [062262df] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-05-16 14:01:38 +0300 cap develop deploy BRANCH=test-branch
+  INFO ---------------------------------------------------------------------------
+  INFO [16387f0e] Running /usr/bin/env mkdir -p /tmp/open-reestr-nopriz as deploy@10.102.55.48
+ DEBUG [16387f0e] Command: /usr/bin/env mkdir -p /tmp/open-reestr-nopriz
+  INFO [16387f0e] Finished in 2.095 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh 0.0%
+  INFO Uploading /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh 100.0%
+  INFO [2f9a1729] Running /usr/bin/env chmod 700 /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh as deploy@10.102.55.48
+ DEBUG [2f9a1729] Command: /usr/bin/env chmod 700 /tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh
+  INFO [2f9a1729] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [b9828db4] Running /usr/bin/env git ls-remote git@git.nms:prof_sdc/front_open_profsdc.git HEAD as deploy@10.102.55.48
+ DEBUG [b9828db4] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git ls-remote git@git.nms:prof_sdc/front_open_profsdc.git HEAD )
+ DEBUG [b9828db4] 	1744c94898a6626e652758cee03c4685037e14ee	HEAD
+  INFO [b9828db4] Finished in 0.878 seconds with exit status 0 (successful).
+  INFO [c1cc1f4b] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared /var/www/front_open_profsdc/releases as deploy@10.102.55.48
+ DEBUG [c1cc1f4b] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared /var/www/front_open_profsdc/releases
+  INFO [c1cc1f4b] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [e22593dc] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared/node_modules as deploy@10.102.55.48
+ DEBUG [e22593dc] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared/node_modules
+  INFO [e22593dc] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [f1df7bf9] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared as deploy@10.102.55.48
+ DEBUG [f1df7bf9] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/shared
+  INFO [f1df7bf9] Finished in 0.087 seconds with exit status 0 (successful).
+ DEBUG [bfd97a4a] Running [ -f /var/www/front_open_profsdc/shared/.env ] as deploy@10.102.55.48
+ DEBUG [bfd97a4a] Command: [ -f /var/www/front_open_profsdc/shared/.env ]
+ DEBUG [bfd97a4a] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [5e8e1a0f] Running [ -f /var/www/front_open_profsdc/shared/.env.production ] as deploy@10.102.55.48
+ DEBUG [5e8e1a0f] Command: [ -f /var/www/front_open_profsdc/shared/.env.production ]
+ DEBUG [5e8e1a0f] Finished in 0.085 seconds with exit status 0 (successful).
+ DEBUG [517d0e0c] Running [ -f /var/www/front_open_profsdc/current/REVISION ] as deploy@10.102.55.48
+ DEBUG [517d0e0c] Command: [ -f /var/www/front_open_profsdc/current/REVISION ]
+ DEBUG [517d0e0c] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [389072e7] Running /usr/bin/env cat /var/www/front_open_profsdc/current/REVISION 2>/dev/null as deploy@10.102.55.48
+ DEBUG [389072e7] Command: /usr/bin/env cat /var/www/front_open_profsdc/current/REVISION 2>/dev/null
+ DEBUG [389072e7] 	5d95f58251426fe095877dcdd95f625a3385868c
+ DEBUG [389072e7] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [827e0fb5] Running [ -f /var/www/front_open_profsdc/repo/HEAD ] as deploy@10.102.55.48
+ DEBUG [827e0fb5] Command: [ -f /var/www/front_open_profsdc/repo/HEAD ]
+ DEBUG [827e0fb5] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/front_open_profsdc/repo
+ DEBUG [c0fb3504] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [c0fb3504] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [c0fb3504] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [1a265845] Running /usr/bin/env git remote set-url origin git@git.nms:prof_sdc/front_open_profsdc.git as deploy@10.102.55.48
+ DEBUG [1a265845] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git remote set-url origin git@git.nms:prof_sdc/front_open_profsdc.git )
+  INFO [1a265845] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [4c7b08c2] Running /usr/bin/env git remote update --prune as deploy@10.102.55.48
+ DEBUG [4c7b08c2] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4c7b08c2] 	Fetching origin
+ DEBUG [4c7b08c2] 	From git.nms:prof_sdc/front_open_profsdc
+   5d95f58..1744c94  test-branch -> test-branch
+  INFO [4c7b08c2] Finished in 0.853 seconds with exit status 0 (successful).
+ DEBUG [21800be7] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [21800be7] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [21800be7] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [b32e72c6] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516110147 as deploy@10.102.55.48
+ DEBUG [b32e72c6] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516110147 )
+  INFO [b32e72c6] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [d1007369] Running /usr/bin/env git archive test-branch | /usr/bin/env tar -x -f - -C /var/www/front_open_profsdc/releases/20220516110147 as deploy@10.102.55.48
+ DEBUG [d1007369] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git archive test-branch | /usr/bin/env tar -x -f - -C /var/www/front_open_profsdc/releases/20220516110147 )
+  INFO [d1007369] Finished in 0.106 seconds with exit status 0 (successful).
+ DEBUG [2b7d70ac] Running if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [2b7d70ac] Command: if test ! -d /var/www/front_open_profsdc/repo; then echo "Directory does not exist '/var/www/front_open_profsdc/repo'" 1>&2; false; fi
+ DEBUG [2b7d70ac] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [b04ba2e7] Running /usr/bin/env git rev-list --max-count=1 test-branch as deploy@10.102.55.48
+ DEBUG [b04ba2e7] Command: cd /var/www/front_open_profsdc/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/open-reestr-nopriz/git-ssh-front_open_profsdc-develop-ernis.sh" ; /usr/bin/env git rev-list --max-count=1 test-branch )
+ DEBUG [b04ba2e7] 	1744c94898a6626e652758cee03c4685037e14ee
+ DEBUG [b04ba2e7] Finished in 0.091 seconds with exit status 0 (successful).
+ DEBUG [b58aa4c1] Running if test ! -d /var/www/front_open_profsdc/releases/20220516110147; then echo "Directory does not exist '/var/www/front_open_profsdc/releases/20220516110147'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [b58aa4c1] Command: if test ! -d /var/www/front_open_profsdc/releases/20220516110147; then echo "Directory does not exist '/var/www/front_open_profsdc/releases/20220516110147'" 1>&2; false; fi
+ DEBUG [b58aa4c1] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [3386ccaa] Running /usr/bin/env echo "1744c94898a6626e652758cee03c4685037e14ee" > REVISION as deploy@10.102.55.48
+ DEBUG [3386ccaa] Command: cd /var/www/front_open_profsdc/releases/20220516110147 && /usr/bin/env echo "1744c94898a6626e652758cee03c4685037e14ee" > REVISION
+  INFO [3386ccaa] Finished in 0.087 seconds with exit status 0 (successful).
+  INFO [04b8dce0] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516110147 as deploy@10.102.55.48
+ DEBUG [04b8dce0] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516110147
+  INFO [04b8dce0] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [a9b883da] Running [ -L /var/www/front_open_profsdc/releases/20220516110147/.env ] as deploy@10.102.55.48
+ DEBUG [a9b883da] Command: [ -L /var/www/front_open_profsdc/releases/20220516110147/.env ]
+ DEBUG [a9b883da] Finished in 0.086 seconds with exit status 1 (failed).
+ DEBUG [75dd6cb9] Running [ -f /var/www/front_open_profsdc/releases/20220516110147/.env ] as deploy@10.102.55.48
+ DEBUG [75dd6cb9] Command: [ -f /var/www/front_open_profsdc/releases/20220516110147/.env ]
+ DEBUG [75dd6cb9] Finished in 0.044 seconds with exit status 1 (failed).
+  INFO [c54b636f] Running /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env /var/www/front_open_profsdc/releases/20220516110147/.env as deploy@10.102.55.48
+ DEBUG [c54b636f] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env /var/www/front_open_profsdc/releases/20220516110147/.env
+  INFO [c54b636f] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [8059a440] Running [ -L /var/www/front_open_profsdc/releases/20220516110147/.env.production ] as deploy@10.102.55.48
+ DEBUG [8059a440] Command: [ -L /var/www/front_open_profsdc/releases/20220516110147/.env.production ]
+ DEBUG [8059a440] Finished in 0.044 seconds with exit status 1 (failed).
+ DEBUG [200441dc] Running [ -f /var/www/front_open_profsdc/releases/20220516110147/.env.production ] as deploy@10.102.55.48
+ DEBUG [200441dc] Command: [ -f /var/www/front_open_profsdc/releases/20220516110147/.env.production ]
+ DEBUG [200441dc] Finished in 0.087 seconds with exit status 1 (failed).
+  INFO [37621262] Running /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env.production /var/www/front_open_profsdc/releases/20220516110147/.env.production as deploy@10.102.55.48
+ DEBUG [37621262] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/shared/.env.production /var/www/front_open_profsdc/releases/20220516110147/.env.production
+  INFO [37621262] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [7180b382] Running /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516110147 as deploy@10.102.55.48
+ DEBUG [7180b382] Command: /usr/bin/env mkdir -p /var/www/front_open_profsdc/releases/20220516110147
+  INFO [7180b382] Finished in 0.085 seconds with exit status 0 (successful).
+ DEBUG [e723b29f] Running [ -L /var/www/front_open_profsdc/releases/20220516110147/node_modules ] as deploy@10.102.55.48
+ DEBUG [e723b29f] Command: [ -L /var/www/front_open_profsdc/releases/20220516110147/node_modules ]
+ DEBUG [e723b29f] Finished in 0.044 seconds with exit status 1 (failed).
+ DEBUG [904f092f] Running [ -d /var/www/front_open_profsdc/releases/20220516110147/node_modules ] as deploy@10.102.55.48
+ DEBUG [904f092f] Command: [ -d /var/www/front_open_profsdc/releases/20220516110147/node_modules ]
+ DEBUG [904f092f] Finished in 0.086 seconds with exit status 1 (failed).
+  INFO [2f4fa30e] Running /usr/bin/env ln -s /var/www/front_open_profsdc/shared/node_modules /var/www/front_open_profsdc/releases/20220516110147/node_modules as deploy@10.102.55.48
+ DEBUG [2f4fa30e] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/shared/node_modules /var/www/front_open_profsdc/releases/20220516110147/node_modules
+  INFO [2f4fa30e] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [d7a381ee] Running /usr/bin/env ln -s /var/www/front_open_profsdc/releases/20220516110147 /var/www/front_open_profsdc/releases/current as deploy@10.102.55.48
+ DEBUG [d7a381ee] Command: /usr/bin/env ln -s /var/www/front_open_profsdc/releases/20220516110147 /var/www/front_open_profsdc/releases/current
+  INFO [d7a381ee] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO [08d4c4a1] Running /usr/bin/env mv /var/www/front_open_profsdc/releases/current /var/www/front_open_profsdc as deploy@10.102.55.48
+ DEBUG [08d4c4a1] Command: /usr/bin/env mv /var/www/front_open_profsdc/releases/current /var/www/front_open_profsdc
+  INFO [08d4c4a1] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [0b186599] Running [ -d /var/www/front_open_profsdc/releases/20220516110147 ] as deploy@10.102.55.48
+ DEBUG [0b186599] Command: [ -d /var/www/front_open_profsdc/releases/20220516110147 ]
+ DEBUG [0b186599] Finished in 0.087 seconds with exit status 0 (successful).
+  INFO [e08111d3] Running cd '/var/www/front_open_profsdc/releases/20220516110147'; as deploy@10.102.55.48
+ DEBUG [e08111d3] Command: cd '/var/www/front_open_profsdc/releases/20220516110147';
+  INFO [e08111d3] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [f110e0bf] Running cd '/var/www/front_open_profsdc/releases/20220516110147'; npm install; as deploy@10.102.55.48
+ DEBUG [f110e0bf] Command: cd '/var/www/front_open_profsdc/releases/20220516110147'; npm install;
+ DEBUG [f110e0bf] 	npm
+ DEBUG [f110e0bf] 	 WARN
+ DEBUG [f110e0bf] 	 reify Removing non-directory /var/www/front_open_profsdc/releases/20220516110147/node_modules
+ DEBUG [f110e0bf] 	npm
+ DEBUG [f110e0bf] 	 WARN deprecated source-map-resolve@0.6.0: See https://github.com/lydell/source-map-resolve#deprecated
+ DEBUG [f110e0bf] 	npm WARN
+ DEBUG [f110e0bf] 	 deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+ DEBUG [f110e0bf] 	npm WARN deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+ DEBUG [f110e0bf] 	
+added 1321 packages, and audited 1322 packages in 36s
+ DEBUG [f110e0bf] 	
+ DEBUG [f110e0bf] 	183 packages are looking for funding
+ DEBUG [f110e0bf] 	  run `npm fund` for details
+ DEBUG [f110e0bf] 	
+6 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+  INFO [f110e0bf] Finished in 36.125 seconds with exit status 0 (successful).
+  INFO [c2a09d62] Running cd '/var/www/front_open_profsdc/releases/20220516110147'; npm run build; as deploy@10.102.55.48
+ DEBUG [c2a09d62] Command: cd '/var/www/front_open_profsdc/releases/20220516110147'; npm run build;
+ DEBUG [c2a09d62] 	
+> my-app@0.1.0 build
+> react-scripts build
+
+ DEBUG [c2a09d62] 	Creating an optimized production build...
+ DEBUG [c2a09d62] 	Compiled with warnings.
+
+ DEBUG [c2a09d62] 	src/components/poisk/poisk.js
+  Line 2:10:   'SearchOutlined' is defined but never used        no-unused-vars
+  Line 5:8:    'axios' is defined but never used                 no-unused-vars
+  Line 10:12:  'data' is assigned a value but never used         no-unused-vars
+  Line 10:18:  'setData' is assigned a value but never used      no-unused-vars
+  Line 11:12:  'value' is assigned a value but never used        no-unused-vars
+  Line 11:19:  'setValue' is assigned a value but never used     no-unused-vars
+  Line 13:11:  'handleReset' is assigned a value but never used  no-unused-vars
+
+src/pages/registry-certificate-expert/registryCertificateExperts.js
+  Line 6:26:  'correctlyDate' is defined but never used  no-unused-vars
+
+src/pages/registry-certificates/registry-certificates.js
+  Line 6:26:  'correctlyDate' is defined but never used  no-unused-vars
+ DEBUG [c2a09d62] 	
+Search for the keywords to learn more about each warning.
+ DEBUG [c2a09d62] 	To ignore, add // eslint-disable-next-line to the line before.
+
+ DEBUG [c2a09d62] 	File sizes after gzip:
+
+ DEBUG [c2a09d62] 	  232.84 kB  build/static/js/main.fac03456.js
+ DEBUG [c2a09d62] 	  68.02 kB   build/static/css/main.3bd537cd.css
+ DEBUG [c2a09d62] 	
+ DEBUG [c2a09d62] 	The project was built assuming it is hosted at /.
+ DEBUG [c2a09d62] 	You can control this with the homepage field in your package.json.
+ DEBUG [c2a09d62] 	
+ DEBUG [c2a09d62] 	The build folder is ready to be deployed.
+ DEBUG [c2a09d62] 	You may serve it with a static server:
+ DEBUG [c2a09d62] 	
+ DEBUG [c2a09d62] 	  npm install -g serve
+ DEBUG [c2a09d62] 	  serve -s build
+ DEBUG [c2a09d62] 	
+ DEBUG [c2a09d62] 	Find out more about deployment here:
+ DEBUG [c2a09d62] 	
+ DEBUG [c2a09d62] 	  https://cra.link/deployment
+ DEBUG [c2a09d62] 	
+  INFO [c2a09d62] Finished in 44.253 seconds with exit status 0 (successful).
+ DEBUG [1616cbd1] Running /usr/bin/env ls -x /var/www/front_open_profsdc/releases as deploy@10.102.55.48
+ DEBUG [1616cbd1] Command: /usr/bin/env ls -x /var/www/front_open_profsdc/releases
+ DEBUG [1616cbd1] 	20220515185559	20220516092049	20220516094458	20220516103552	20220516104039
+20220516110147
+ DEBUG [1616cbd1] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 10.102.55.48
+ DEBUG [0da21b0a] Running [ -d /var/www/front_open_profsdc/current ] as deploy@10.102.55.48
+ DEBUG [0da21b0a] Command: [ -d /var/www/front_open_profsdc/current ]
+ DEBUG [0da21b0a] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [2c65ee64] Running /usr/bin/env readlink /var/www/front_open_profsdc/current as deploy@10.102.55.48
+ DEBUG [2c65ee64] Command: /usr/bin/env readlink /var/www/front_open_profsdc/current
+ DEBUG [2c65ee64] 	/var/www/front_open_profsdc/releases/20220516110147
+ DEBUG [2c65ee64] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [26530164] Running /usr/bin/env rm -rf /var/www/front_open_profsdc/releases/20220515185559 as deploy@10.102.55.48
+ DEBUG [26530164] Command: /usr/bin/env rm -rf /var/www/front_open_profsdc/releases/20220515185559
+  INFO [26530164] Finished in 1.395 seconds with exit status 0 (successful).
+ DEBUG [9908a74c] Running if test ! -d /var/www/front_open_profsdc/releases; then echo "Directory does not exist '/var/www/front_open_profsdc/releases'" 1>&2; false; fi as deploy@10.102.55.48
+ DEBUG [9908a74c] Command: if test ! -d /var/www/front_open_profsdc/releases; then echo "Directory does not exist '/var/www/front_open_profsdc/releases'" 1>&2; false; fi
+ DEBUG [9908a74c] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [35a8c584] Running /usr/bin/env echo "Branch test-branch (at 1744c94898a6626e652758cee03c4685037e14ee) deployed as release 20220516110147 by ernis" >> /var/www/front_open_profsdc/revisions.log as deploy@10.102.55.48
+ DEBUG [35a8c584] Command: cd /var/www/front_open_profsdc/releases && /usr/bin/env echo "Branch test-branch (at 1744c94898a6626e652758cee03c4685037e14ee) deployed as release 20220516110147 by ernis" >> /var/www/front_open_profsdc/revisions.log
+  INFO [35a8c584] Finished in 0.048 seconds with exit status 0 (successful).
