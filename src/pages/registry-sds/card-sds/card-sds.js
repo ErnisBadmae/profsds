@@ -56,7 +56,9 @@ function CardSds(props) {
                     Сайт
                 </strong>
                 <br />
-                <p>{currentItem?.site}</p>
+                <p>
+                    <a href={currentItem?.site}>{currentItem?.site}</a>
+                </p>
 
                 <strong>
                     <br />
@@ -67,17 +69,17 @@ function CardSds(props) {
 
                 <strong>
                     <br />
-                    Логотип
+                    Изображение знака
                 </strong>
                 <br />
                 <p>{currentItem?.logo}</p>
 
-                {/* <strong>
+                <strong>
                     <br />
                     Статус
                 </strong>
                 <br />
-                <p>{currentItem?.status || 'нет данных'}</p> */}
+                <p>{currentItem?.status || 'нет данных'}</p>
             </div>
         </div>
     );

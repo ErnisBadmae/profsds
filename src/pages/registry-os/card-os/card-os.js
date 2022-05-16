@@ -86,7 +86,9 @@ function CardOs(props) {
                     Сайт
                 </strong>
                 <br />
-                <p>{currentItem?.site}</p>
+                <p>
+                    <a href={currentItem?.site}>{currentItem?.site}</a>
+                </p>
 
                 <strong>
                     <br />

@@ -56,26 +56,33 @@ function CardExpert(props) {
                 <br />
                 <p>{correctlyDate(currentItem?.valid)}</p>
 
-                {/* <strong>
+                <strong>
                     <br />
                     Дата вступления в организацию
                 </strong>
                 <br />
-                <p>{correctlyDate(currentItem?.introduction_date)}</p> */}
-
-                {/* <strong>
-                    <br />
-                    Дата исключение из организации
-                </strong>
-                <br />
-                <p>{currentItem?.exclusion_date}</p> */}
+                <p>{'нет данных'}</p>
 
                 <strong>
                     <br />
-                    Должность при исключении
+                    Дата исключения
+                </strong>
+                <br />
+                <p>{currentItem?.exclusion || 'нет данных'}</p>
+
+                <strong>
+                    <br />
+                    Должность
                 </strong>
                 <br />
                 <p>{currentItem?.exclusion_position}</p>
+
+                <strong>
+                    <br />
+                    Основание для привлечения личного труда
+                </strong>
+                <br />
+                <p>{currentItem?.exclusion || 'нет данных'}</p>
 
                 {/* <strong>
                     <br />

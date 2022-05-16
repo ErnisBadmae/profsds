@@ -51,7 +51,7 @@ function CardSertificate(props) {
                 <p>{correctlyDate(currentItem?.certificate_date)}</p>
                 <strong>
                     <br />
-                    Срок действия
+                    Срок действия сертификата
                 </strong>
                 <br />
                 <p>{correctlyDate(currentItem?.valid_date)}</p>
@@ -72,14 +72,14 @@ function CardSertificate(props) {
 
                 <strong>
                     <br />
-                    Примечание
+                    Особые отметки (например, оценка при наличии)
                 </strong>
                 <br />
                 <p>{currentItem?.comment}</p>
 
                 <strong>
                     <br />
-                    Сертификат(скан)
+                    Скан-копия сертификата
                 </strong>
                 <br />
                 <p>{currentItem?.certificate_scan}</p>

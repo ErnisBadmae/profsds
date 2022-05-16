@@ -40,6 +40,6 @@ export const handleTitle = (pathname) => {
             return 'Реестр сертификатов';
 
         default:
-            return 'СДС';
+            return 'Реестр СДС';
     }
 };

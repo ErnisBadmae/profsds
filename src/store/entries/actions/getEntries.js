@@ -15,19 +15,9 @@ export const getEntries = createAsyncThunk(
                 ...el,
                 certificate_date: correctlyDate(el.certificate_date),
                 valid_date: correctlyDate(el.valid_date),
+                registration_date: correctlyDate(el.registration_date),
             };
         });
-
-        //    return data;
-
-        //    const newEntries = entries.map((el) => {
-        //      return correctlyDate(el.valid_date);
-        //      //    return {
-        //      //        ...el,
-        //      //    };
-        //  });
-        //  console.log(newEntries, 'newEntries');
-
         return value;
     }
 );
