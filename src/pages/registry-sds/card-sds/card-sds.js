@@ -8,9 +8,6 @@ import './card-item.css';
 
 function CardSds(props) {
     const { pathname } = useLocation();
-
-    //     console.log(pathname, 'pathnamefromcardcurrent');
-    //     const { id } = useParams();
     const dispatch = useDispatch();
 
     const { currentCard } = useSelector((state) => state.entries);
@@ -21,8 +18,7 @@ function CardSds(props) {
             ...el,
         };
     }, {});
-    //     const currentItem = currentCard ?? Object.assign({}, currentCard);
-    //     const currentItem = entries.find((el) => el.id_sds === id);
+
     useEffect(() => {
         dispatch(getView(pathname));
     }, [pathname, dispatch]);
@@ -83,22 +79,14 @@ function CardSds(props) {
                 <br />
                 <p>{currentItem?.status || 'нет данных'}</p> */}
             </div>
-            {/* <div className="btn__card">
-                <ButtonRegistry
-                    text="Список членов СДС"
-                    path={'/certificates/list'}
-                />
-                <ButtonRegistry
-                    text="Сведения о компенсации"
-                    path={'/certificates/list'}
-                />
-                <ButtonRegistry
-                    text="Выгрузить реестр членов СДС"
-                    path={'/certificates/list'}
-                />
-            </div> */}
         </div>
     );
 }
 
 export default CardSds;
+
+// const titles = ['Сокращенное название', 'Регистрационный номер'];
+// return (
+//      titles.map((el) => {
+//           return <div>{el}</div>
+//      })

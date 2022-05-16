@@ -3,10 +3,7 @@ import { Table } from 'antd';
 import { getEntries } from '../../store/entries/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import {
-    relocateToCard,
-    //  correctlyDate
-} from '../../helpers/utils';
+import { relocateToCard, correctlyDate } from '../../helpers/utils';
 import { certifacatesTableColumn } from '../../helpers/columnsTableConstants';
 
 import './registry-certificates.scss';
@@ -14,13 +11,6 @@ import './registry-certificates.scss';
 export const RegistryCertificates = () => {
     const { entries } = useSelector((state) => state.entries);
 
-    //     const newEntries = entries.map((el) => {
-    //         if ({ el } instanceof Date) correctlyDate({ el });
-    //         //    return {
-    //         //        ...el,
-    //         //    };
-    //     });
-    //     console.log(newEntries, 'newEntries');
     //     const newEnt = entries.map(({ el }) => {
     //         //    if (Object.prototype.toString.call(el) === '[object Date]') {
     //         //        correctlyDate(el.certificate_date);
