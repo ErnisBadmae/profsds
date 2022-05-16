@@ -40,6 +40,18 @@ export const sdsTableColumns = [
 
 export const OsTableColumn = [
     {
+        title: '',
+        dataIndex: 'id',
+        data_type: 'string',
+        is_sort: true,
+        number_in_row: 2,
+        sorter: (a, b) => a.id - b.id,
+        showSorterTooltip: false,
+        defaultSortOrder: 'ascend',
+        sortDirections: ['ascend', 'descend'],
+        width: 30,
+    },
+    {
         title: 'Наименование',
         dataIndex: 'full_name_organ_certification',
         data_type: 'string',
