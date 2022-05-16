@@ -33,7 +33,7 @@ export const RegistryOs = () => {
                     total: entries.length,
                 }}
                 onRow={(record) => relocateToCard(record, pathname, navigate)}
-                rowKey={(obj) => obj.full_name_organ_certification}
+                rowKey={(obj) => obj.id}
             />
         </div>
     );
