@@ -54,7 +54,7 @@ function CardExpert(props) {
                     Действителен до
                 </strong>
                 <br />
-                <p>{correctlyDate(currentItem?.valid)}</p>
+                <p>{correctlyDate(currentItem?.valid_data)}</p>
 
                 <strong>
                     <br />

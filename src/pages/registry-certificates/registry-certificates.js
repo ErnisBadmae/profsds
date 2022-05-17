@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { Table } from 'antd';
 import { getEntries } from '../../store/entries/actions';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { relocateToCard, correctlyDate } from '../../helpers/utils';
+import { useLocation, useNavigate, useOutletContext } from 'react-router-dom';
+import { relocateToCard } from '../../helpers/utils';
 import { certifacatesTableColumn } from '../../helpers/columnsTableConstants';
 
 import './registry-certificates.scss';
@@ -27,10 +27,11 @@ export const RegistryCertificates = () => {
     const navigate = useNavigate();
 
     const { pathname } = useLocation();
+    const [filterValues] = useOutletContext();
 
     useEffect(() => {
-        dispatch(getEntries(pathname));
-    }, [pathname, dispatch]);
+        dispatch(getEntries({ pathname, filterValues }));
+    }, [pathname, filterValues, dispatch]);
 
     return (
         <div>

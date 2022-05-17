@@ -5,12 +5,12 @@ import axios from 'axios';
 export const getEntries = createAsyncThunk(
     'entries/get',
     async (payload, dispatch) => {
-        let result = await axios.post(
-            `http://api-prof-sdc.anonamis.ru/api/register${payload}`
+        const result = await axios.post(
+            `http://api-prof-sdc.anonamis.ru/api/register${payload.pathname}`,
+            payload.filterValues ? { filters: payload.filterValues } : null
         );
         const value = result.data.data.data.map((el) => {
             //   if ({ el } instanceof Date) correctlyDate({ el });
-
             return {
                 ...el,
                 certificate_date: correctlyDate(el.certificate_date),

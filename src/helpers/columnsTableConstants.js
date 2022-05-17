@@ -149,10 +149,17 @@ export const certifacatesTableColumn = [
         is_sort: true,
         number_in_row: 1,
     },
+    {
+        title: 'Дата выдачи сертификата',
+        dataIndex: 'certificate_date',
+        data_type: 'string',
+        is_sort: true,
+        number_in_row: 1,
+    },
 
     {
         title: 'Срок действия сертификата',
-        dataIndex: 'certificate_date',
+        dataIndex: 'valid_date',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
@@ -228,7 +235,7 @@ export const certificateExpertsTable = [
         number_in_row: 1,
     },
     {
-        title: 'Дата выдачи аттестата	',
+        title: 'Дата выдачи аттестата',
         dataIndex: '',
         data_type: 'string',
         is_sort: true,

@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
-import { Select, Layout, Input, Form, Drawer, Button } from 'antd';
+import { Select, Layout, Form, Drawer, Button } from 'antd';
 import { FilterFilled } from '@ant-design/icons';
 import { Poisk } from '../../components/poisk/poisk';
 import { useState } from 'react';
-import axios from 'axios';
 import { useLocation } from 'react-router-dom';
-import { handleTitle } from '../../helpers/utils';
+import { handleTitle, handleInputsFilter } from '../../helpers/utils';
+
 const { Content } = Layout;
 const { Option } = Select;
 
@@ -25,10 +25,15 @@ const statusOptions = [
 ];
 
 export const TableWrapper = () => {
+    const [filterValues, setFilterValues] = useState(null);
     const { pathname } = useLocation();
 
     let [filterModalVisible, setFilterModalVisible] = useState(false);
     const [form] = Form.useForm();
+
+    const handleFilterValues = () => {
+        setFilterValues(form.getFieldsValue());
+    };
 
     return (
         <Content style={{ padding: '0 20px' }}>
@@ -64,24 +69,8 @@ export const TableWrapper = () => {
                                     ))}
                                 </Select>
                             </Form.Item>
-                            <Form.Item name="address">
-                                <Input
-                                    className="registry-sro__filter-input"
-                                    placeholder="Адрес"
-                                ></Input>
-                            </Form.Item>
-                            <Form.Item name="fullName">
-                                <Input
-                                    className="registry-sro__filter-input"
-                                    placeholder="Полное наименование организации"
-                                ></Input>
-                            </Form.Item>
-                            <Form.Item name="regNumber">
-                                <Input
-                                    className="registry-sro__filter-input"
-                                    placeholder="Регистрационный номер"
-                                ></Input>
-                            </Form.Item>
+
+                            {handleInputsFilter(pathname)}
                         </Form>
                         <div className="registry-sro__buttons-wrapper">
                             <Button
@@ -93,20 +82,13 @@ export const TableWrapper = () => {
                             <Button
                                 className="custom-button"
                                 type="primary"
-                                onClick={() => {
-                                    const body = form.getFieldsValue();
-
-                                    axios.post(
-                                        'http://api-prof-sdc.anonamis.ru/api/register/standard-certifications/list',
-                                        body
-                                    );
-                                }}
+                                onClick={handleFilterValues}
                             >
                                 OK
                             </Button>
                         </div>
                     </Drawer>
-                    <Outlet />
+                    <Outlet context={[filterValues]} />
                 </div>
             </div>
         </Content>
