@@ -18,7 +18,7 @@ function CardOs(props) {
     return (
         <div class="card-container">
             <BreadCrumbs registry="os-card">
-                <span> - </span>
+                <span> {'>'} </span>
                 <span> {currentCard?.certificate_number} </span>
             </BreadCrumbs>
             <div className="card">

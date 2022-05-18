@@ -24,7 +24,7 @@ function CardExpert(props) {
     return (
         <div class="card-container">
             <BreadCrumbs registry="expert-card">
-                <span> - </span>
+                <span> {'>'} </span>
                 <span> {currentCard?.expert_name} </span>
             </BreadCrumbs>
             <div className="card">

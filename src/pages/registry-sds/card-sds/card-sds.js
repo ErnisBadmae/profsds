@@ -19,7 +19,7 @@ function CardSds(props) {
     return (
         <div className="card-container">
             <BreadCrumbs registry="sds-card">
-                <span> - </span>
+                <span> {'>'} </span>
                 <span> {currentCard?.full_name} </span>
             </BreadCrumbs>
             <div className="card">

@@ -19,7 +19,7 @@ function CardSertificate(props) {
     return (
         <div class="card-container">
             <BreadCrumbs registry="certificate-card">
-                <span> - </span>
+                <span> {'>'} </span>
                 <span> {currentCard?.company_name} </span>
             </BreadCrumbs>
             <div className="card">
