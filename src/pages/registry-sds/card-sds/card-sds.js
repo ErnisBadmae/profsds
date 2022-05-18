@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { correctlyDate } from '../../../helpers/utils';
 import { getView } from '../../../store/entries/actions';
@@ -26,7 +26,7 @@ function CardSds(props) {
 
     return (
         <div className="card-container">
-            <BreadCrumbs registry="sds">
+            <BreadCrumbs registry="sds-card">
                 <span> - </span>
                 <span> {currentItem?.full_name} </span>
             </BreadCrumbs>

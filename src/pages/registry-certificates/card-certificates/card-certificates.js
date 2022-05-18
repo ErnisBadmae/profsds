@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getView } from '../../../store/entries/actions';
 import { correctlyDate } from '../../../helpers/utils';
+import { BreadCrumbs } from '../../../components/breadCrumbs/breadCrumbs';
 
 import './card-item.css';
 
@@ -23,73 +24,70 @@ function CardSertificate(props) {
     }, [pathname, dispatch]);
 
     return (
-        <div className="card">
-            <div className="card__title">
-                <strong>{currentItem?.company_name}</strong>
-            </div>
-
-            <div className="card__body">
-                <strong>№ выданного сертификата</strong>
-                <br />
-                <p>{currentItem?.number}</p>
-                <br />
-
-                <strong>ИНН получателя</strong>
-                <br />
-                <p>{currentItem?.company_inn}</p>
-
-                <strong>
-                    <br />№ бланка
-                </strong>
-                <p>{currentItem?.certificate_form}</p>
-
-                <strong>
+        <div class="card-container">
+            <BreadCrumbs registry="certificate-card">
+                <span> - </span>
+                <span> {currentItem?.company_name} </span>
+            </BreadCrumbs>
+            <div className="card">
+                <div className="card__title">
+                    <strong>{currentItem?.company_name}</strong>
+                </div>
+                <div className="card__body">
+                    <strong>№ выданного сертификата</strong>
                     <br />
-                    Дата выдачи
-                </strong>
-                <br />
-                <p>{correctlyDate(currentItem?.certificate_date)}</p>
-                <strong>
+                    <p>{currentItem?.number}</p>
                     <br />
-                    Срок действия сертификата
-                </strong>
-                <br />
-                <p>{correctlyDate(currentItem?.valid_date)}</p>
-
-                <strong>
+                    <strong>ИНН получателя</strong>
                     <br />
-                    Соответствие требованиям (например, стандарт)
-                </strong>
-                <br />
-                <p>{currentItem?.certificate_conformity}</p>
-
-                <strong>
+                    <p>{currentItem?.company_inn}</p>
+                    <strong>
+                        <br />№ бланка
+                    </strong>
+                    <p>{currentItem?.certificate_form}</p>
+                    <strong>
+                        <br />
+                        Дата выдачи
+                    </strong>
                     <br />
-                    ОГРН получателя
-                </strong>
-                <br />
-                <p>{currentItem?.company_ogrn}</p>
-
-                <strong>
+                    <p>{correctlyDate(currentItem?.certificate_date)}</p>
+                    <strong>
+                        <br />
+                        Срок действия сертификата
+                    </strong>
                     <br />
-                    Особые отметки (например, оценка при наличии)
-                </strong>
-                <br />
-                <p>{currentItem?.comment}</p>
-
-                <strong>
+                    <p>{correctlyDate(currentItem?.valid_date)}</p>
+                    <strong>
+                        <br />
+                        Соответствие требованиям (например, стандарт)
+                    </strong>
                     <br />
-                    Скан-копия сертификата
-                </strong>
-                <br />
-                <p>{currentItem?.certificate_scan}</p>
-
-                {/* <strong>
+                    <p>{currentItem?.certificate_conformity}</p>
+                    <strong>
+                        <br />
+                        ОГРН получателя
+                    </strong>
                     <br />
-                    Статус
-                </strong>
-                <br />
-                <p>{currentItem?.status || 'нет данных'}</p> */}
+                    <p>{currentItem?.company_ogrn}</p>
+                    <strong>
+                        <br />
+                        Особые отметки (например, оценка при наличии)
+                    </strong>
+                    <br />
+                    <p>{currentItem?.comment}</p>
+                    <strong>
+                        <br />
+                        Скан-копия сертификата
+                    </strong>
+                    <br />
+                    <p>{currentItem?.certificate_scan}</p>
+                    {/* <strong>
+                         <br />
+                         Статус
+                     </strong>
+                     <br />
+                     <p>{currentItem?.status || 'нет данных'}</p> */}
+                </div>
             </div>
         </div>
     );

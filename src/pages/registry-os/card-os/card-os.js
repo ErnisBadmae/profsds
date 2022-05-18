@@ -3,9 +3,9 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getView } from '../../../store/entries/actions';
 import { correctlyDate } from '../../../helpers/utils';
+import { BreadCrumbs } from '../../../components/breadCrumbs/breadCrumbs';
 
 import './card-item.css';
-import { BreadCrumbs } from '../../../components/breadCrumbs/breadCrumbs';
 
 function CardOs(props) {
     const dispatch = useDispatch();
@@ -25,7 +25,7 @@ function CardOs(props) {
 
     return (
         <div class="card-container">
-            <BreadCrumbs registry="os">
+            <BreadCrumbs registry="os-card">
                 <span> - </span>
                 <span> {currentItem?.certificate_number} </span>
             </BreadCrumbs>

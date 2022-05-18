@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getView } from '../../../store/entries/actions';
 import { correctlyDate } from '../../../helpers/utils';
+import { BreadCrumbs } from '../../../components/breadCrumbs/breadCrumbs';
 
 import './card-item.css';
 
@@ -28,83 +29,80 @@ function CardExpert(props) {
     }, [pathname, dispatch]);
 
     return (
-        <div className="card">
-            <div className="card__title">
-                <strong>{currentItem?.expert_name}</strong>
-            </div>
-
-            <div className="card__body">
-                <strong>№ аттестата</strong>
-                <br />
-                <p>{currentItem?.certificate_number}</p>
-                <br />
-
-                <strong>Область специализации</strong>
-                <br />
-                <p>{currentItem?.area}</p>
-
-                <strong>
+        <div class="card-container">
+            <BreadCrumbs registry="certificate-card">
+                <span> - </span>
+                <span> {currentItem?.expert_name} </span>
+            </BreadCrumbs>
+            <div className="card">
+                <div className="card__title">
+                    <strong>{currentItem?.expert_name}</strong>
+                </div>
+                <div className="card__body">
+                    <strong>№ аттестата</strong>
                     <br />
-                    Сертификат (скан)
-                </strong>
-                <p>{currentItem?.certificate_scan}</p>
-
-                <strong>
+                    <p>{currentItem?.certificate_number}</p>
                     <br />
-                    Действителен до
-                </strong>
-                <br />
-                <p>{correctlyDate(currentItem?.valid_data)}</p>
-
-                <strong>
+                    <strong>Область специализации</strong>
                     <br />
-                    Дата вступления в организацию
-                </strong>
-                <br />
-                <p>{'нет данных'}</p>
-
-                <strong>
+                    <p>{currentItem?.area}</p>
+                    <strong>
+                        <br />
+                        Сертификат (скан)
+                    </strong>
+                    <p>{currentItem?.certificate_scan}</p>
+                    <strong>
+                        <br />
+                        Действителен до
+                    </strong>
                     <br />
-                    Дата исключения
-                </strong>
-                <br />
-                <p>{currentItem?.exclusion || 'нет данных'}</p>
-
-                <strong>
+                    <p>{correctlyDate(currentItem?.valid_data)}</p>
+                    <strong>
+                        <br />
+                        Дата вступления в организацию
+                    </strong>
                     <br />
-                    Должность
-                </strong>
-                <br />
-                <p>{currentItem?.exclusion_position}</p>
-
-                <strong>
+                    <p>{'нет данных'}</p>
+                    <strong>
+                        <br />
+                        Дата исключения
+                    </strong>
                     <br />
-                    Основание для привлечения личного труда
-                </strong>
-                <br />
-                <p>{currentItem?.exclusion || 'нет данных'}</p>
-
-                {/* <strong>
+                    <p>{currentItem?.exclusion || 'нет данных'}</p>
+                    <strong>
+                        <br />
+                        Должность
+                    </strong>
                     <br />
-                    Статус
-                </strong>
-                <br />
-                <p>{currentItem?.status || 'нет данных'}</p>
-            </div>
-            {/* <div className="btn__card">
-                <ButtonRegistry
-                    text="Список членов СДС"
-                    path={'/certificates/list'}
-                />
-                <ButtonRegistry
-                    text="Сведения о компенсации"
-                    path={'/certificates/list'}
-                />
-                <ButtonRegistry
-                    text="Выгрузить реестр членов СДС"
-                    path={'/certificates/list'}
-                />
-            </div> */}
+                    <p>{currentItem?.exclusion_position}</p>
+                    <strong>
+                        <br />
+                        Основание для привлечения личного труда
+                    </strong>
+                    <br />
+                    <p>{currentItem?.exclusion || 'нет данных'}</p>
+                    {/* <strong>
+                         <br />
+                         Статус
+                     </strong>
+                     <br />
+                     <p>{currentItem?.status || 'нет данных'}</p>
+                 </div>
+                 {/* <div className="btn__card">
+                     <ButtonRegistry
+                         text="Список членов СДС"
+                         path={'/certificates/list'}
+                     />
+                     <ButtonRegistry
+                         text="Сведения о компенсации"
+                         path={'/certificates/list'}
+                     />
+                     <ButtonRegistry
+                         text="Выгрузить реестр членов СДС"
+                         path={'/certificates/list'}
+                     />
+                 </div> */}
+                </div>
             </div>
         </div>
     );
