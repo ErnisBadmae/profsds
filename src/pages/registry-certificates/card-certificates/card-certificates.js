@@ -12,13 +12,6 @@ function CardSertificate(props) {
     const { pathname } = useLocation();
     const { currentCard } = useSelector((state) => state.entries);
 
-    const currentItem = currentCard?.reduce((acc, el, i) => {
-        return {
-            ...acc,
-            ...el,
-        };
-    }, {});
-
     useEffect(() => {
         dispatch(getView(pathname));
     }, [pathname, dispatch]);
@@ -27,60 +20,60 @@ function CardSertificate(props) {
         <div class="card-container">
             <BreadCrumbs registry="certificate-card">
                 <span> - </span>
-                <span> {currentItem?.company_name} </span>
+                <span> {currentCard?.company_name} </span>
             </BreadCrumbs>
             <div className="card">
                 <div className="card__title">
-                    <strong>{currentItem?.company_name}</strong>
+                    <strong>{currentCard?.company_name}</strong>
                 </div>
                 <div className="card__body">
                     <strong>№ выданного сертификата</strong>
                     <br />
-                    <p>{currentItem?.number}</p>
+                    <p>{currentCard?.number}</p>
                     <br />
                     <strong>ИНН получателя</strong>
                     <br />
-                    <p>{currentItem?.company_inn}</p>
+                    <p>{currentCard?.company_inn}</p>
                     <strong>
                         <br />№ бланка
                     </strong>
-                    <p>{currentItem?.certificate_form}</p>
+                    <p>{currentCard?.certificate_form}</p>
                     <strong>
                         <br />
                         Дата выдачи
                     </strong>
                     <br />
-                    <p>{correctlyDate(currentItem?.certificate_date)}</p>
+                    <p>{correctlyDate(currentCard?.certificate_date)}</p>
                     <strong>
                         <br />
                         Срок действия сертификата
                     </strong>
                     <br />
-                    <p>{correctlyDate(currentItem?.valid_date)}</p>
+                    <p>{correctlyDate(currentCard?.valid_date)}</p>
                     <strong>
                         <br />
                         Соответствие требованиям (например, стандарт)
                     </strong>
                     <br />
-                    <p>{currentItem?.certificate_conformity}</p>
+                    <p>{currentCard?.certificate_conformity}</p>
                     <strong>
                         <br />
                         ОГРН получателя
                     </strong>
                     <br />
-                    <p>{currentItem?.company_ogrn}</p>
+                    <p>{currentCard?.company_ogrn}</p>
                     <strong>
                         <br />
                         Особые отметки (например, оценка при наличии)
                     </strong>
                     <br />
-                    <p>{currentItem?.comment}</p>
+                    <p>{currentCard?.comment}</p>
                     <strong>
                         <br />
                         Скан-копия сертификата
                     </strong>
                     <br />
-                    <p>{currentItem?.certificate_scan}</p>
+                    <p>{currentCard?.certificate_scan}</p>
                     {/* <strong>
                          <br />
                          Статус

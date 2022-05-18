@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { correctlyDate } from '../../../helpers/utils';
 import { getView } from '../../../store/entries/actions';
 // import { Breadcrumb } from 'antd';
 import './card-item.css';
@@ -13,13 +12,6 @@ function CardSds(props) {
 
     const { currentCard } = useSelector((state) => state.entries);
 
-    const currentItem = currentCard?.reduce((acc, el, i) => {
-        return {
-            ...acc,
-            ...el,
-        };
-    }, {});
-
     useEffect(() => {
         dispatch(getView(pathname));
     }, [pathname, dispatch]);
@@ -28,34 +20,34 @@ function CardSds(props) {
         <div className="card-container">
             <BreadCrumbs registry="sds-card">
                 <span> - </span>
-                <span> {currentItem?.full_name} </span>
+                <span> {currentCard?.full_name} </span>
             </BreadCrumbs>
             <div className="card">
                 <div className="card__title">
-                    <strong>{currentItem?.full_name}</strong>
+                    <strong>{currentCard?.full_name}</strong>
                 </div>
 
                 <div className="card__body">
                     <strong>Сокращенное название</strong>
                     <br />
-                    <p>{currentItem?.short_name}</p>
+                    <p>{currentCard?.short_name}</p>
 
                     <strong>Регистрационный номер</strong>
                     <br />
-                    <p>{currentItem?.registration_number}</p>
+                    <p>{currentCard?.registration_number}</p>
 
                     <strong>
                         <br />
                         Дата регистрации
                     </strong>
-                    <p>{correctlyDate(currentItem?.registration_date)}</p>
+                    <p>{currentCard?.registration_date}</p>
 
                     <strong>
                         <br />
                         Организация, представившая СДС на регистрацию (Оно же
                         Держатель)
                     </strong>
-                    <p>{currentItem?.registration_company}</p>
+                    <p>{currentCard?.registration_company}</p>
 
                     <strong>
                         <br />
@@ -63,7 +55,7 @@ function CardSds(props) {
                     </strong>
                     <br />
                     <p>
-                        <a href={currentItem?.site}>{currentItem?.site}</a>
+                        <a href={currentCard?.site}>{currentCard?.site}</a>
                     </p>
 
                     <strong>
@@ -71,21 +63,21 @@ function CardSds(props) {
                         Область распространения
                     </strong>
                     <br />
-                    <p>{currentItem?.area}</p>
+                    <p>{currentCard?.area}</p>
 
                     <strong>
                         <br />
                         Изображение знака
                     </strong>
                     <br />
-                    <p>{currentItem?.logo}</p>
+                    <p>{currentCard?.logo}</p>
 
                     <strong>
                         <br />
                         Статус
                     </strong>
                     <br />
-                    <p>{currentItem?.status || 'нет данных'}</p>
+                    <p>{currentCard?.status || 'нет данных'}</p>
                 </div>
             </div>
         </div>

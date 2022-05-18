@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getView } from '../../../store/entries/actions';
-import { correctlyDate } from '../../../helpers/utils';
 import { BreadCrumbs } from '../../../components/breadCrumbs/breadCrumbs';
 
 import './card-item.css';
@@ -16,12 +15,6 @@ function CardExpert(props) {
 
     const { currentCard } = useSelector((state) => state.entries);
 
-    const currentItem = currentCard?.reduce((acc, el, i) => {
-        return {
-            ...acc,
-            ...el,
-        };
-    }, {});
     //     const currentItem = currentCard ?? Object.assign({}, currentCard);
     //     const currentItem = entries.find((el) => el.id_sds === id);
     useEffect(() => {
@@ -30,33 +23,33 @@ function CardExpert(props) {
 
     return (
         <div class="card-container">
-            <BreadCrumbs registry="certificate-card">
+            <BreadCrumbs registry="expert-card">
                 <span> - </span>
-                <span> {currentItem?.expert_name} </span>
+                <span> {currentCard?.expert_name} </span>
             </BreadCrumbs>
             <div className="card">
                 <div className="card__title">
-                    <strong>{currentItem?.expert_name}</strong>
+                    <strong>{currentCard?.expert_name}</strong>
                 </div>
                 <div className="card__body">
                     <strong>№ аттестата</strong>
                     <br />
-                    <p>{currentItem?.certificate_number}</p>
+                    <p>{currentCard?.certificate_number}</p>
                     <br />
                     <strong>Область специализации</strong>
                     <br />
-                    <p>{currentItem?.area}</p>
+                    <p>{currentCard?.area}</p>
                     <strong>
                         <br />
                         Сертификат (скан)
                     </strong>
-                    <p>{currentItem?.certificate_scan}</p>
+                    <p>{currentCard?.certificate_scan}</p>
                     <strong>
                         <br />
                         Действителен до
                     </strong>
                     <br />
-                    <p>{correctlyDate(currentItem?.valid_data)}</p>
+                    <p>{currentCard?.valid}</p>
                     <strong>
                         <br />
                         Дата вступления в организацию
@@ -68,19 +61,19 @@ function CardExpert(props) {
                         Дата исключения
                     </strong>
                     <br />
-                    <p>{currentItem?.exclusion || 'нет данных'}</p>
+                    <p>{currentCard?.exclusion || 'нет данных'}</p>
                     <strong>
                         <br />
                         Должность
                     </strong>
                     <br />
-                    <p>{currentItem?.exclusion_position}</p>
+                    <p>{currentCard?.exclusion_position}</p>
                     <strong>
                         <br />
                         Основание для привлечения личного труда
                     </strong>
                     <br />
-                    <p>{currentItem?.exclusion || 'нет данных'}</p>
+                    <p>{currentCard?.exclusion || 'нет данных'}</p>
                     {/* <strong>
                          <br />
                          Статус

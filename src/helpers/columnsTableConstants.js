@@ -171,13 +171,13 @@ export const certifacatesTableColumn = [
         is_sort: true,
         number_in_row: 1,
     },
-    {
-        title: 'Наименование',
-        dataIndex: '',
-        data_type: 'string',
-        is_sort: true,
-        number_in_row: 1,
-    },
+    //     {
+    //         title: 'Наименование',
+    //         dataIndex: '',
+    //         data_type: 'string',
+    //         is_sort: true,
+    //         number_in_row: 1,
+    //     },
     {
         title: 'ОС',
         dataIndex: '',

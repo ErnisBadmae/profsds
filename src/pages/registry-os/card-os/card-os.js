@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getView } from '../../../store/entries/actions';
-import { correctlyDate } from '../../../helpers/utils';
 import { BreadCrumbs } from '../../../components/breadCrumbs/breadCrumbs';
 
 import './card-item.css';
@@ -12,13 +11,6 @@ function CardOs(props) {
     const { pathname } = useLocation();
     const { currentCard } = useSelector((state) => state.entries);
 
-    const currentItem = currentCard?.reduce((acc, el, i) => {
-        return {
-            ...acc,
-            ...el,
-        };
-    }, {});
-
     useEffect(() => {
         dispatch(getView(pathname));
     }, [pathname, dispatch]);
@@ -27,71 +19,71 @@ function CardOs(props) {
         <div class="card-container">
             <BreadCrumbs registry="os-card">
                 <span> - </span>
-                <span> {currentItem?.certificate_number} </span>
+                <span> {currentCard?.certificate_number} </span>
             </BreadCrumbs>
             <div className="card">
                 <div className="card__title">
                     <strong>
-                        {currentItem?.full_name_organization_certification}
+                        {currentCard?.full_name_organization_certification}
                     </strong>
                 </div>
                 <div className="card__body">
                     <strong>Номер аттестата аккредитации</strong>
                     <br />
-                    <p>{currentItem?.certificate_number}</p>
+                    <p>{currentCard?.certificate_number}</p>
                     <br />
                     <strong>Дата решения об аккредитации</strong>
                     <br />
-                    <p>{correctlyDate(currentItem?.certificate_date)}</p>
+                    <p>{currentCard?.certificate_date}</p>
                     <strong>
                         <br />
                         Номер решения об аккредитации
                     </strong>
-                    <p>{currentItem?.decision_number}</p>
+                    <p>{currentCard?.decision_number}</p>
                     <strong>
                         <br />
                         ИНН
                     </strong>
                     <br />
-                    <p>{currentItem?.inn}</p>
+                    <p>{currentCard?.inn}</p>
                     <strong>
                         <br />
                         ОГРН
                     </strong>
                     <br />
-                    <p>{currentItem?.ogrn}</p>
+                    <p>{currentCard?.ogrn}</p>
                     <strong>
                         <br />
                         ФИО руководителя
                     </strong>
                     <br />
-                    <p>{currentItem?.manager_name}</p>
+                    <p>{currentCard?.manager_name}</p>
                     <strong>
                         <br />
                         Адрес
                     </strong>
                     <br />
-                    <p>{currentItem?.address}</p>
+                    <p>{currentCard?.address}</p>
                     <strong>
                         <br />
                         Электронная почта
                     </strong>
                     <br />
-                    <p>{currentItem?.email}</p>
+                    <p>{currentCard?.email}</p>
                     <strong>
                         <br />
                         Сайт
                     </strong>
                     <br />
                     <p>
-                        <a href={currentItem?.site}>{currentItem?.site}</a>
+                        <a href={currentCard?.site}>{currentCard?.site}</a>
                     </p>
                     <strong>
                         <br />
                         Область распространения
                     </strong>
                     <br />
-                    <p>{currentItem?.area}</p>
+                    <p>{currentCard?.area}</p>
                     {/* <strong>
                          <br />
                          Статус
