@@ -4,7 +4,8 @@ import { FilterFilled } from '@ant-design/icons';
 import { Poisk } from '../../components/poisk/poisk';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { handleTitle, handleInputsFilter } from '../../helpers/utils';
+import { handleTitle } from '../../helpers/utils';
+import { handleInputsFilter } from '../../helpers/inputsFilterConstants';
 
 const { Content } = Layout;
 const { Option } = Select;
@@ -69,7 +70,6 @@ export const TableWrapper = () => {
                                     ))}
                                 </Select>
                             </Form.Item>
-
                             {handleInputsFilter(pathname)}
                         </Form>
                         <div className="registry-sro__buttons-wrapper">
