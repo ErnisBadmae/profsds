@@ -10,7 +10,7 @@ export const getEntries = createAsyncThunk(
             payload.filterValues ? { filters: payload.filterValues } : null
         );
         const value = result.data.data.data.map((el) => {
-            //   if ({ el } instanceof Date) correctlyDate({ el });
+            //     if ({ el } instanceof Date) correctlyDate({ el });
             return {
                 ...el,
                 certificate_date: correctlyDate(el.certificate_date),

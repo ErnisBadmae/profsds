@@ -5,6 +5,7 @@ import { getView } from '../../../store/entries/actions';
 import { correctlyDate } from '../../../helpers/utils';
 
 import './card-item.css';
+import { BreadCrumbs } from '../../../components/breadCrumbs/breadCrumbs';
 
 function CardOs(props) {
     const dispatch = useDispatch();
@@ -23,86 +24,81 @@ function CardOs(props) {
     }, [pathname, dispatch]);
 
     return (
-        <div className="card">
-            <div className="card__title">
-                <strong>
-                    {currentItem?.full_name_organization_certification}
-                </strong>
-            </div>
-
-            <div className="card__body">
-                <strong>Номер аттестата аккредитации</strong>
-                <br />
-                <p>{currentItem?.certificate_number}</p>
-                <br />
-
-                <strong>Дата решения об аккредитации</strong>
-                <br />
-                <p>{correctlyDate(currentItem?.certificate_date)}</p>
-
-                <strong>
+        <div class="card-container">
+            <BreadCrumbs registry="os">
+                <span> - </span>
+                <span> {currentItem?.certificate_number} </span>
+            </BreadCrumbs>
+            <div className="card">
+                <div className="card__title">
+                    <strong>
+                        {currentItem?.full_name_organization_certification}
+                    </strong>
+                </div>
+                <div className="card__body">
+                    <strong>Номер аттестата аккредитации</strong>
                     <br />
-                    Номер решения об аккредитации
-                </strong>
-                <p>{currentItem?.decision_number}</p>
-
-                <strong>
+                    <p>{currentItem?.certificate_number}</p>
                     <br />
-                    ИНН
-                </strong>
-                <br />
-                <p>{currentItem?.inn}</p>
-
-                <strong>
+                    <strong>Дата решения об аккредитации</strong>
                     <br />
-                    ОГРН
-                </strong>
-                <br />
-                <p>{currentItem?.ogrn}</p>
-
-                <strong>
+                    <p>{correctlyDate(currentItem?.certificate_date)}</p>
+                    <strong>
+                        <br />
+                        Номер решения об аккредитации
+                    </strong>
+                    <p>{currentItem?.decision_number}</p>
+                    <strong>
+                        <br />
+                        ИНН
+                    </strong>
                     <br />
-                    ФИО руководителя
-                </strong>
-                <br />
-                <p>{currentItem?.manager_name}</p>
-
-                <strong>
+                    <p>{currentItem?.inn}</p>
+                    <strong>
+                        <br />
+                        ОГРН
+                    </strong>
                     <br />
-                    Адрес
-                </strong>
-                <br />
-                <p>{currentItem?.address}</p>
-
-                <strong>
+                    <p>{currentItem?.ogrn}</p>
+                    <strong>
+                        <br />
+                        ФИО руководителя
+                    </strong>
                     <br />
-                    Электронная почта
-                </strong>
-                <br />
-                <p>{currentItem?.email}</p>
-
-                <strong>
+                    <p>{currentItem?.manager_name}</p>
+                    <strong>
+                        <br />
+                        Адрес
+                    </strong>
                     <br />
-                    Сайт
-                </strong>
-                <br />
-                <p>
-                    <a href={currentItem?.site}>{currentItem?.site}</a>
-                </p>
-
-                <strong>
+                    <p>{currentItem?.address}</p>
+                    <strong>
+                        <br />
+                        Электронная почта
+                    </strong>
                     <br />
-                    Область распространения
-                </strong>
-                <br />
-                <p>{currentItem?.area}</p>
-
-                {/* <strong>
+                    <p>{currentItem?.email}</p>
+                    <strong>
+                        <br />
+                        Сайт
+                    </strong>
                     <br />
-                    Статус
-                </strong>
-                <br />
-                <p>{currentItem?.status || 'нет данных'}</p> */}
+                    <p>
+                        <a href={currentItem?.site}>{currentItem?.site}</a>
+                    </p>
+                    <strong>
+                        <br />
+                        Область распространения
+                    </strong>
+                    <br />
+                    <p>{currentItem?.area}</p>
+                    {/* <strong>
+                         <br />
+                         Статус
+                     </strong>
+                     <br />
+                     <p>{currentItem?.status || 'нет данных'}</p> */}
+                </div>
             </div>
         </div>
     );

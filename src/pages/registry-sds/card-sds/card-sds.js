@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { correctlyDate } from '../../../helpers/utils';
 import { getView } from '../../../store/entries/actions';
-
+// import { Breadcrumb } from 'antd';
 import './card-item.css';
+import { BreadCrumbs } from '../../../components/breadCrumbs/breadCrumbs';
 
 function CardSds(props) {
     const { pathname } = useLocation();
@@ -24,62 +25,68 @@ function CardSds(props) {
     }, [pathname, dispatch]);
 
     return (
-        <div className="card">
-            <div className="card__title">
-                <strong>{currentItem?.full_name}</strong>
-            </div>
+        <div className="card-container">
+            <BreadCrumbs registry="sds">
+                <span> - </span>
+                <span> {currentItem?.full_name} </span>
+            </BreadCrumbs>
+            <div className="card">
+                <div className="card__title">
+                    <strong>{currentItem?.full_name}</strong>
+                </div>
 
-            <div className="card__body">
-                <strong>Сокращенное название</strong>
-                <br />
-                <p>{currentItem?.short_name}</p>
-
-                <strong>Регистрационный номер</strong>
-                <br />
-                <p>{currentItem?.registration_number}</p>
-
-                <strong>
+                <div className="card__body">
+                    <strong>Сокращенное название</strong>
                     <br />
-                    Дата регистрации
-                </strong>
-                <p>{correctlyDate(currentItem?.registration_date)}</p>
+                    <p>{currentItem?.short_name}</p>
 
-                <strong>
+                    <strong>Регистрационный номер</strong>
                     <br />
-                    Организация, представившая СДС на регистрацию (Оно же
-                    Держатель)
-                </strong>
-                <p>{currentItem?.registration_company}</p>
+                    <p>{currentItem?.registration_number}</p>
 
-                <strong>
-                    <br />
-                    Сайт
-                </strong>
-                <br />
-                <p>
-                    <a href={currentItem?.site}>{currentItem?.site}</a>
-                </p>
+                    <strong>
+                        <br />
+                        Дата регистрации
+                    </strong>
+                    <p>{correctlyDate(currentItem?.registration_date)}</p>
 
-                <strong>
-                    <br />
-                    Область распространения
-                </strong>
-                <br />
-                <p>{currentItem?.area}</p>
+                    <strong>
+                        <br />
+                        Организация, представившая СДС на регистрацию (Оно же
+                        Держатель)
+                    </strong>
+                    <p>{currentItem?.registration_company}</p>
 
-                <strong>
+                    <strong>
+                        <br />
+                        Сайт
+                    </strong>
                     <br />
-                    Изображение знака
-                </strong>
-                <br />
-                <p>{currentItem?.logo}</p>
+                    <p>
+                        <a href={currentItem?.site}>{currentItem?.site}</a>
+                    </p>
 
-                <strong>
+                    <strong>
+                        <br />
+                        Область распространения
+                    </strong>
                     <br />
-                    Статус
-                </strong>
-                <br />
-                <p>{currentItem?.status || 'нет данных'}</p>
+                    <p>{currentItem?.area}</p>
+
+                    <strong>
+                        <br />
+                        Изображение знака
+                    </strong>
+                    <br />
+                    <p>{currentItem?.logo}</p>
+
+                    <strong>
+                        <br />
+                        Статус
+                    </strong>
+                    <br />
+                    <p>{currentItem?.status || 'нет данных'}</p>
+                </div>
             </div>
         </div>
     );
