@@ -6,7 +6,7 @@ export const getView = createAsyncThunk(
     'view/getCurrent',
     async (payload, dispatch) => {
         let result = await axios.get(
-            `http://api-prof-sdc.anonamis.ru/api/register${payload}`
+            `https://api-prof-sdc.anonamis.ru/api/register${payload}`
         );
         const value = result.data.data.reduce((acc, el, i) => {
             return {
