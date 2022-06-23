@@ -217,13 +217,13 @@ export const certificateExpertsTable = [
         is_sort: true,
         number_in_row: 1,
     },
-    {
-        title: 'Дата выдачи аттестата',
-        dataIndex: 'certificate_date',
-        data_type: 'string',
-        is_sort: true,
-        number_in_row: 1,
-    },
+    //     {
+    //         title: 'Дата выдачи аттестата',
+    //         dataIndex: 'certificate_date',
+    //         data_type: 'string',
+    //         is_sort: true,
+    //         number_in_row: 1,
+    //     },
     {
         title: 'Срок действия сертификата (аттестата)',
         dataIndex: 'valid',

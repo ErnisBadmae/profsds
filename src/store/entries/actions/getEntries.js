@@ -12,7 +12,7 @@ export const getEntries = createAsyncThunk('entries/get', async (payload) => {
         return {
             ...el,
             certificate_date: correctlyDate(el.certificate_date),
-            valid_date: correctlyDate(el.valid_date),
+            valid: correctlyDate(el.valid),
             registration_date: correctlyDate(el.registration_date),
         };
     });

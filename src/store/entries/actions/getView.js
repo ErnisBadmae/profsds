@@ -14,6 +14,8 @@ export const getView = createAsyncThunk('view/getCurrent', async (payload) => {
             valid_date: correctlyDate(el.valid_date),
             valid: correctlyDate(el.valid),
             registration_date: correctlyDate(el.registration_date),
+            introduction_date: correctlyDate(el.introduction_date),
+            exclusion_date: correctlyDate(el.exclusion_date),
         };
     }, {});
     //     if ({ el } instanceof Date) correctlyDate({ el });

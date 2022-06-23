@@ -55,13 +55,13 @@ function CardExpert(props) {
                         Дата вступления в организацию
                     </strong>
                     <br />
-                    <p>{'нет данных'}</p>
+                    <p>{currentCard?.introduction_date || 'нет данных'}</p>
                     <strong>
                         <br />
                         Дата исключения
                     </strong>
                     <br />
-                    <p>{currentCard?.exclusion || 'нет данных'}</p>
+                    <p>{currentCard?.exclusion_date || 'нет данных'}</p>
                     <strong>
                         <br />
                         Должность
@@ -73,7 +73,7 @@ function CardExpert(props) {
                         Основание для привлечения личного труда
                     </strong>
                     <br />
-                    <p>{currentCard?.exclusion || 'нет данных'}</p>
+                    <p>{currentCard?.inclusion_document || 'нет данных'}</p>
                     {/* <strong>
                          <br />
                          Статус
