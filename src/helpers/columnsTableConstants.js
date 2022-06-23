@@ -13,7 +13,9 @@ export const sdsTableColumns = [
     },
     {
         title: 'Статус',
-        dataIndex: '',
+        dataIndex: {
+            status: 'title',
+        },
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
@@ -81,35 +83,22 @@ export const OsTableColumn = [
     },
     {
         title: 'ИНН',
-        dataIndex: '',
-        data_type: 'string',
-        is_sort: true,
-        number_in_row: 1,
-    },
-    {
-        title: 'СДС',
-        dataIndex: '',
+        dataIndex: 'inn',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
     },
     {
         title: 'Область сертификации',
-        dataIndex: '',
+        dataIndex: 'area',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
     },
-    {
-        title: 'Количество аттестованных экспертов',
-        dataIndex: '',
-        data_type: 'string',
-        is_sort: true,
-        number_in_row: 1,
-    },
+
     {
         title: 'Дата решения об аккредитации',
-        dataIndex: '',
+        dataIndex: 'certificate_date',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
@@ -166,7 +155,7 @@ export const certifacatesTableColumn = [
     },
     {
         title: 'ИНН',
-        dataIndex: '',
+        dataIndex: 'company_inn',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
@@ -185,16 +174,10 @@ export const certifacatesTableColumn = [
         is_sort: true,
         number_in_row: 1,
     },
-    {
-        title: 'Индекс',
-        dataIndex: '',
-        data_type: 'string',
-        is_sort: true,
-        number_in_row: 1,
-    },
+
     {
         title: 'Статус сертификата',
-        dataIndex: '',
+        dataIndex: 'title',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
@@ -222,7 +205,7 @@ export const certificateExpertsTable = [
     },
     {
         title: '№ сертификата (аттестата)',
-        dataIndex: '',
+        dataIndex: 'certificate_number',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
@@ -236,21 +219,21 @@ export const certificateExpertsTable = [
     },
     {
         title: 'Дата выдачи аттестата',
-        dataIndex: '',
+        dataIndex: 'certificate_date',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
     },
     {
         title: 'Срок действия сертификата (аттестата)',
-        dataIndex: '',
+        dataIndex: 'valid',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
     },
     {
         title: 'Область деятельности (аттестации) эксперта	',
-        dataIndex: '',
+        dataIndex: 'area',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
