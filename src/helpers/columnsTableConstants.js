@@ -13,9 +13,7 @@ export const sdsTableColumns = [
     },
     {
         title: 'Статус',
-        dataIndex: {
-            status: 'title',
-        },
+        dataIndex: 'statusTitle',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
@@ -169,7 +167,7 @@ export const certifacatesTableColumn = [
     //     },
     {
         title: 'ОС',
-        dataIndex: '',
+        dataIndex: 'osValue',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
@@ -177,7 +175,7 @@ export const certifacatesTableColumn = [
 
     {
         title: 'Статус сертификата',
-        dataIndex: 'title',
+        dataIndex: 'statusTitle',
         data_type: 'string',
         is_sort: true,
         number_in_row: 1,
