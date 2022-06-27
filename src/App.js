@@ -40,7 +40,6 @@ function App() {
                         path="/organ-certification/view/:id"
                         element={<CardOs />}
                     />
-
                     <Route element={<TableWrapper />}>
                         <Route
                             path="/standard-certifications/list"
@@ -59,6 +58,7 @@ function App() {
                             element={<RegistryCertificates />}
                         />
                     </Route>
+                    =
                 </Route>
             </Routes>
         </BrowserRouter>

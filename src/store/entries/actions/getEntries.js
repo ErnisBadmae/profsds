@@ -7,7 +7,7 @@ export const getEntries = createAsyncThunk('entries/get', async (payload) => {
         `https://api-prof-sdc.anonamis.ru/api/register${payload.pathname}`,
         payload.filterValues ? { filters: payload.filterValues } : null
     );
-    console.log(result, 'result');
+
     const value = result.data.data.data.map((el) => {
         // debugger;
         //     if ({ el } instanceof Date) correctlyDate({ el });
