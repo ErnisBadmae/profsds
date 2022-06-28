@@ -58,7 +58,7 @@ export const TableWrapper = () => {
                         onClose={() => setFilterModalVisible(false)}
                     >
                         <Form form={form}>
-                            <Form.Item name="state">
+                            {/* <Form.Item name="state">
                                 <Select
                                     className="registry-sro__filter-input"
                                     placeholder="Статус"
@@ -69,7 +69,7 @@ export const TableWrapper = () => {
                                         </Option>
                                     ))}
                                 </Select>
-                            </Form.Item>
+                            </Form.Item> */}
                             {handleInputsFilter(pathname)}
                         </Form>
                         <div className="registry-sro__buttons-wrapper">
