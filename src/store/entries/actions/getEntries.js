@@ -5,7 +5,11 @@ import axios from 'axios';
 export const getEntries = createAsyncThunk('entries/get', async (payload) => {
     const result = await axios.post(
         `https://api-prof-sdc.anonamis.ru/api/register${payload.pathname}`,
-        payload.filterValues ? { filters: payload.filterValues } : null
+        {
+            row_page: payload.row_page,
+            page: payload.page,
+            filters: payload.filters,
+        }
     );
 
     const value = result.data.data.data.map((el) => {
@@ -27,5 +31,6 @@ export const getEntries = createAsyncThunk('entries/get', async (payload) => {
                     ?.short_name_organ_certification,
         };
     });
-    return value;
+    const totalElements = result.data.data.data_header.count;
+    return { data: value, totalElements };
 });

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Table } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Table, Pagination } from 'antd';
 import { getEntries } from '../../store/entries/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate, useOutletContext } from 'react-router-dom';
@@ -9,7 +9,10 @@ import { certifacatesTableColumn } from '../../helpers/columnsTableConstants';
 import './registry-certificates.scss';
 
 export const RegistryCertificates = () => {
-    const { entries } = useSelector((state) => state.entries);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
+    const [filterValues] = useOutletContext();
 
     //     const newEnt = entries.map(({ el }) => {
     //         //    if (Object.prototype.toString.call(el) === '[object Date]') {
@@ -23,32 +26,45 @@ export const RegistryCertificates = () => {
     //     });
     //     console.log(newEntries, 'newEntries');
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const [pageIndex, setPageIndex] = useState(0);
+    const [pageSize, setPageSize] = useState(10);
 
-    const { pathname } = useLocation();
-    const [filterValues] = useOutletContext();
+    const { data } = useSelector((state) => state.entries.entries);
+    const { totalElements } = useSelector((state) => state.entries.entries);
 
     useEffect(() => {
-        dispatch(getEntries({ pathname, filterValues }));
-    }, [pathname, filterValues, dispatch]);
+        dispatch(
+            getEntries({
+                row_page: pageSize,
+                page: pageIndex,
+                pathname,
+                filterValues: filterValues ? { filters: filterValues } : {},
+            })
+        );
+    }, [pageIndex, pageSize, pathname, filterValues, dispatch]);
 
     return (
         <div>
             <Table
                 columns={certifacatesTableColumn}
-                dataSource={entries}
+                dataSource={data}
                 className="registry-sro__table"
                 size="medium"
                 filterSearch={true}
-                pagination={{
-                    // pageSize: '5',
-                    showSizeChanger: true,
-                    // itemRender: itemRender
-                    total: entries.length,
-                }}
+                pagination={false}
                 onRow={(record) => relocateToCard(record, pathname, navigate)}
                 rowKey={(obj) => obj.id}
+            />
+            <Pagination
+                key={'pagination'}
+                showSizeChanger={true}
+                current={pageIndex}
+                total={totalElements}
+                pageSize={pageSize}
+                onChange={(page) => setPageIndex(page)}
+                onShowSizeChange={(current, newPageSize) =>
+                    setPageSize(newPageSize)
+                }
             />
         </div>
     );

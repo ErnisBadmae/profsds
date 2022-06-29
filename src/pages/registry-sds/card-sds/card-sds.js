@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getView } from '../../../store/entries/actions';
-// import { Breadcrumb } from 'antd';
+
 import './card-item.css';
 import { BreadCrumbs } from '../../../components/breadCrumbs/breadCrumbs';
 
@@ -77,7 +77,7 @@ function CardSds(props) {
                         Статус
                     </strong>
                     <br />
-                    <p>{currentCard?.status || 'нет данных'}</p>
+                    <p>{currentCard?.status?.title || 'нет данных'}</p>
                 </div>
             </div>
         </div>

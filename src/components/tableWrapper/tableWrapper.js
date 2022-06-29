@@ -36,6 +36,17 @@ export const TableWrapper = () => {
         setFilterValues(form.getFieldsValue());
     };
 
+    const handleCloseFilters = () => {
+        setFilterModalVisible(false);
+        form.resetFields();
+    };
+
+    const handleResetFilters = () => {
+        form.resetFields();
+        handleFilterValues();
+        setFilterModalVisible(false);
+    };
+
     return (
         <Content style={{ padding: '0 20px' }}>
             <div>
@@ -55,7 +66,7 @@ export const TableWrapper = () => {
                         //     style={{ position: 'absolute' }}
                         title="Отфильтровать записи"
                         visible={filterModalVisible}
-                        onClose={() => setFilterModalVisible(false)}
+                        onClose={handleCloseFilters}
                     >
                         <Form form={form}>
                             {/* <Form.Item name="state">
@@ -75,16 +86,16 @@ export const TableWrapper = () => {
                         <div className="registry-sro__buttons-wrapper">
                             <Button
                                 className="custom-button"
-                                onClick={() => setFilterModalVisible(false)}
+                                onClick={handleResetFilters}
                             >
-                                Cancel
+                                Сбросить фильтр
                             </Button>
                             <Button
                                 className="custom-button"
                                 type="primary"
                                 onClick={handleFilterValues}
                             >
-                                OK
+                                Применить фильтр
                             </Button>
                         </div>
                     </Drawer>
