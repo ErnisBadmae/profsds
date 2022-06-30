@@ -88,14 +88,14 @@ export const TableWrapper = () => {
                                 className="custom-button"
                                 onClick={handleResetFilters}
                             >
-                                Сбросить фильтр
+                                Сбросить
                             </Button>
                             <Button
                                 className="custom-button"
                                 type="primary"
                                 onClick={handleFilterValues}
                             >
-                                Применить фильтр
+                                Применить
                             </Button>
                         </div>
                     </Drawer>

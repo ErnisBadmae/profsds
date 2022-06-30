@@ -8,9 +8,10 @@ export const getEntries = createAsyncThunk('entries/get', async (payload) => {
         {
             row_page: payload.row_page,
             page: payload.page,
-            filters: payload.filters,
+            filters: payload.filterValues,
         }
     );
+    console.log(payload, 'payload');
 
     const value = result.data.data.data.map((el) => {
         // debugger;
@@ -20,6 +21,8 @@ export const getEntries = createAsyncThunk('entries/get', async (payload) => {
             certificate_date: correctlyDate(el.certificate_date),
             valid: correctlyDate(el.valid),
             registration_date: correctlyDate(el.registration_date),
+            valid_date: correctlyDate(el.valid_date),
+
             statusId: el.status?.id,
             statusTitle: el.status
                 ? el.status?.title
