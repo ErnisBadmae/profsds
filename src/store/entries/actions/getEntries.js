@@ -11,10 +11,8 @@ export const getEntries = createAsyncThunk('entries/get', async (payload) => {
             filters: payload.filterValues,
         }
     );
-    console.log(payload, 'payload');
 
     const value = result.data.data.data.map((el) => {
-        // debugger;
         //     if ({ el } instanceof Date) correctlyDate({ el });
         return {
             ...el,
